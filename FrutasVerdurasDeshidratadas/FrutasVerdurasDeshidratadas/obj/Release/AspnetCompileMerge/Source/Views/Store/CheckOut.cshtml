@@ -1,0 +1,106 @@
+﻿@model IEnumerable<FrutasVerdurasDeshidratadas.DAL.USP_Proceed_To_Pay_Result>
+
+@{
+    ViewBag.Title = "CheckOut";
+    Layout = "~/Views/Shared/free_images.cshtml";
+}
+
+<div class="title-all text-center">
+    <h3>Ya tenemos WhatsApp para que realices tus pedídos de forma rápida y fácil. ¡Escribenos al 443 118 7727! 🛒📲</h3>
+    <h1>Detalles de la Compra</h1>
+    <h4>Desgloce de Checkout</h4>
+</div>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cantidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClaveProducto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomProducto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrecioUnitario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubTotal)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cantidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClaveProducto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomProducto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecioUnitario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubTotal)
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div class="row justify-content-end">
+    <div class="col-lg-4 mt-5 cart-wrap ftco-animate">
+        <div class="cart-total mb-3">
+            <h3>Totales del Carrito</h3>
+            <p class="d-flex">
+                <span>Subtotal Unitario </span>
+                <span> $@Model.Sum(i => Convert.ToDouble(i.PrecioUnitario))</span>
+            </p>
+            <p class="d-flex">
+                <span>Total de Piezas </span>
+                <span> @Model.Sum(i => i.Cantidad)</span>
+            </p>
+            <p class="d-flex">
+                <span>Descuento </span>
+                <span> $0.00</span>
+            </p>
+            <hr>
+            <p class="d-flex total-price">
+                <span>Total </span>
+                <span> $@Model.Sum(i => Convert.ToDouble(i.SubTotal))</span>
+            </p>
+        </div>
+        @if (Request.IsAuthenticated)
+        {
+            <div class="col-md-12">
+                <div class="cart-detail p-3 p-md-4">
+                    <h3 class="billing-heading mb-4">Método de Pago</h3>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <div class="radio">
+                                <label><input type="radio" name="optradio" readonly="readonly" checked="checked" class="mr-2"> Paypal</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" value="true" checked="checked" class="mr-2"> He leido y Aceptado los términos y condiciones.</label>
+                            </div>
+                        </div>
+                    </div>
+                    <p><a href="@Url.Action("PaymentWithPaypal", "Store")" class="btn btn-primary py-3 px-4">Generar Orden y Pagar </a></p>
+                </div>
+            </div>
+
+        }
+    </div>
+</div>
+

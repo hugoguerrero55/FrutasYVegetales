@@ -1,0 +1,85 @@
+﻿@model FrutasVerdurasDeshidratadas.Models.Member
+
+@{
+    ViewBag.Title = "Registro";
+    Layout = "~/Views/Shared/_master.cshtml";
+}
+
+<hr />
+
+<div class="title-all text-center">
+    <h3>Ya tenemos WhatsApp para que realices tus pedídos de forma rápida y fácil. ¡Escribenos al 443 118 7727! 🛒📲</h3>
+    <h1>Formulario de registro de usuarios</h1>
+    <h4 class="card-title">! Sea Usted Bienvenido a SaniFrut Shop ¡</h4>
+    <p class="card-text">Registre sus datos y recibirá un correo de bienvenida.</p>
+</div>
+<hr />
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        @*<div class="card-header-title">Formulario de registro de usuarios</div>*@
+                    </div>
+
+                    <div class="card-body collapse show" id="card1">
+                        @*<h4 class="card-title">! Sea Usted Bienvenido a SaniFrut Shop ¡</h4>
+                        <p class="card-text">Registre sus datos y recibirá un correo de bienvenida.</p>*@
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model._firstName, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model._firstName, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model._firstName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model._lastName, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model._lastName, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model._lastName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model._emailId, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model._emailId, new { htmlAttributes = new { @class = "form-control", autofocus = "autofocus" } })
+                                @Html.ValidationMessageFor(model => model._emailId, "", new { @class = "text-danger" })
+                                @Html.ValidationMessage("EmailExist", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model._password, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model._password, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model._password, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model._confirmPassword, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model._confirmPassword, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model._confirmPassword, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <input type="submit" value="Registrar" class="btn btn-primary" />
+                        <hr />
+                        <div>
+                            <a class="btn btn-primary" href="@Url.Action("Index", "Home")">Salir</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

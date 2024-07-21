@@ -1,0 +1,151 @@
+﻿@model IEnumerable<FrutasVerdurasDeshidratadas.DAL.USP_Get_Elements_To_ShoppingCart_Result>
+
+@{
+    ViewBag.Title = "Carrito";
+    Layout = "~/Views/Shared/free_images.cshtml";
+}
+
+<hr />
+
+<div class="title-all text-center">
+    <h3>Ya tenemos WhatsApp para que realices tus pedídos de forma rápida y fácil. ¡Escribenos al 443 118 7727! 🛒📲</h3>
+    <h1>Mi Carrito de Compras</h1>
+    <h4>Contenido del carrito</h4>
+</div>
+
+<!-- Start Cart  -->
+
+<div class="cart-box-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="table-main table-responsive">
+                    @*<h2>Mi Carrito de Compras</h2>*@
+                    @if (Request.IsAuthenticated)
+                    {
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Imágen</th>
+                                    <th>Nombre del Producto</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad</th>
+                                    <th>Sub Total</th>
+                                    <th>Eliminar</th>
+                                </tr>
+                            </thead>
+                            @foreach (var item in Model)
+                            {
+                                <tbody>
+                                    <tr>
+                                        <td class="thumbnail-img">
+
+                                            @*<img class="img-fluid" src="images/img-pro-01.jpg" alt="" />*@
+                                            @switch (item.CategoryName)
+                                            {
+                                                case "Salsas": //Salsas
+                                                    <a href="@Url.Action("Detalle", "Store", new { _productId =  @Html.DisplayFor(modelItem => item.ClaveProducto)}, null)" data-toggle="tooltip" data-placement="right" title="Ver Detalle del Producto">
+                                                        <img class="img-fluid" src="~/images/salsas/@Html.DisplayFor(modelItem => item.ProdDetailImage)" alt="" />
+                                                    </a>
+                                                    break;
+                                                case "Frutas": // Frutas
+                                                    <a href="@Url.Action("Detalle", "Store", new { _productId =  @Html.DisplayFor(modelItem => item.ClaveProducto)}, null)" data-toggle="tooltip" data-placement="right" title="Ver Detalle del Producto">
+                                                        <img class="img-fluid" src="~/images/fruta/@Html.DisplayFor(modelItem => item.ProdDetailImage)" alt="" />
+                                                    </a>
+                                                    break;
+                                                case "Tisanas": //Tisanas
+                                                    <a href="@Url.Action("Detalle", "Store", new { _productId =  @Html.DisplayFor(modelItem => item.ClaveProducto)}, null)" data-toggle="tooltip" data-placement="right" title="Ver Detalle del Producto">
+                                                        <img class="img-fluid" src="~/images/tisanas/@Html.DisplayFor(modelItem => item.ProdDetailImage)" alt="" />
+                                                    </a>
+                                                    break;
+                                            }
+                                        </td>
+
+                                        <td class="name-pr">
+                                            <a href="#">
+                                                @Html.DisplayFor(modelItem => item.ProductName)
+                                            </a>
+                                        </td>
+                                        <td class="price-pr">
+                                            <p>$ @Html.DisplayFor(modelItem => item.Price) MXN.</p>
+                                        </td>
+                                        <td class="quantity-box">
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <a href="@Url.Action("Mas", "Store", new { _memberID = @ViewBag.IdMember, _productId = @item.ClaveProducto }, null)" data-toggle="tooltip" data-placement="right" title="Incrementar">
+                                                            <img src="~/images/mas.jpg" width="18" height="18" />
+                                                        </a>
+                                                    </td>
+                                                    <td><p>@item.Cantidad.ToString()</p></td>
+                                                    <td>
+                                                        <a href="@Url.Action("Menos", "Store", new { _memberID = @ViewBag.IdMember, _productId = @item.ClaveProducto }, null)" data-toggle="tooltip" data-placement="right" title="Decrementar">
+                                                            <img src="~/images/menos.jpg" width="18" height="18" />
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td class="total-pr">
+                                            <p>$ @Convert.ToDouble(@item.SubTotal) MNX.</p>
+                                        </td>
+                                        <td class="remove-pr">
+                                            <a data-toggle="tooltip" data-placement="right" title="Quitar del Carrito" href="@Url.Action("EliminaDelCarrito", "Store", new { _memberID = @ViewBag.IdMember, _productId = @item.ClaveProducto }, null)">
+                                                <img src="~/images/delete.png" width="20" height="20" />
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            }
+                        </table>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="row my-5">
+            <div class="col-lg-6 col-sm-6">
+                <div class="coupon-box">
+                    <div class="input-group input-group-sm">
+                        <div class="input-group-append">
+                            <a class="btn btn-theme" href="@Url.Action("Salsas", "Store", new { _idCategory = 1 })">Regresar a Salsas</a>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="input-group input-group-sm">
+                        <div class="input-group-append">
+                            <a class="btn btn-theme" href="@Url.Action("Frutas", "Store", new { _idCategory = 2 })">Regresar a Frutas</a>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="input-group input-group-sm">
+                        <div class="input-group-append">
+                            <a class="btn btn-theme" href="@Url.Action("Tisanas", "Store", new { _idCategory = 3 })">Regresar a Ponches y Tisanas</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+                <div class="update-box">
+                    @*<a href="@Url.Action("Envio", "Tienda", new { _idTrans = @ViewBag.TransID, _orderID = @ViewBag.OrderID, _amountPaid = @ViewBag.AmountPaid }, null)" class="btn btn-primary py-3 px-4">Continuar con la Entrega </a>*@
+                    <a href="@Url.Action("CheckOut", "Store", new { _idMember = @ViewBag.IdMember }, null)" class="btn btn-primary py-3 px-4">Concretar Compra</a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+                <hr />
+                <h4>🆓ENVIOS GRATIS A DOMICILIO EN MORELIA para compras superiores a $250.</h4>
+            </div>
+            <div align="center" class="col-lg-6 col-sm-6">
+                <hr />
+                <marquee behavior="alternate" bgcolor="#FF5733" direction="left"
+                         loop="7" scrollamount="1" scrolldelay="5" width="100%">
+                    <span style="font-size: 20px;color:#FFFFFF">
+                        Para envíos en el interior de la república, envíenos un WhatsApp ó llamenos antes de concretar su compra al
+                        443 118 7727! 🛒📲 para cotizar su envío.
+                    </span>
+                </marquee>
+            </div>
+        </div>
+        @Html.Raw(TempData["msg"])
+    </div>
+</div>

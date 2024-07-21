@@ -1,0 +1,847 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\.Net Projects\FrutasVerdurasDeshidratadas\Deploy</_PublishTargetUrl>
+    <History>True|2023-06-09T20:22:34.0548539Z;True|2023-06-09T13:53:22.2121590-06:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/App_global.asax.compiled">
+      <publishTime>06/09/2023 14:22:22</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.dll">
+      <publishTime>06/09/2023 14:22:22</publishTime>
+    </File>
+    <File Include="bin/BouncyCastle.Crypto.dll">
+      <publishTime>02/21/2020 16:24:54</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>04/16/2020 20:38:42</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>04/16/2020 20:38:56</publishTime>
+    </File>
+    <File Include="bin/FrutasVerdurasDeshidratadas.dll">
+      <publishTime>06/09/2023 13:52:49</publishTime>
+    </File>
+    <File Include="bin/FrutasVerdurasDeshidratadas.pdb">
+      <publishTime>06/09/2023 13:52:49</publishTime>
+    </File>
+    <File Include="bin/itextsharp.dll">
+      <publishTime>08/27/2020 11:20:20</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>07/08/2020 21:52:58</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>07/25/2012 11:48:56</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>11/09/2019 00:56:44</publishTime>
+    </File>
+    <File Include="bin/PagedList.dll">
+      <publishTime>09/30/2013 17:36:38</publishTime>
+    </File>
+    <File Include="bin/PagedList.Mvc.dll">
+      <publishTime>09/30/2013 18:15:20</publishTime>
+    </File>
+    <File Include="bin/PayPal.dll">
+      <publishTime>10/23/2017 16:17:36</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>05/19/2020 01:51:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe.config">
+      <publishTime>05/19/2020 01:51:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.rsp">
+      <publishTime>05/19/2020 01:40:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe">
+      <publishTime>05/19/2020 01:52:16</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe.config">
+      <publishTime>05/19/2020 01:52:16</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.rsp">
+      <publishTime>05/19/2020 01:40:40</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>05/19/2020 01:47:18</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>05/19/2020 01:51:40</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll">
+      <publishTime>05/19/2020 01:51:58</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>05/19/2020 01:49:16</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll">
+      <publishTime>05/19/2020 01:49:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>05/19/2020 01:50:04</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>05/19/2020 01:40:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll">
+      <publishTime>12/05/2017 01:36:44</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll">
+      <publishTime>12/05/2017 01:36:44</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Managed.Core.targets">
+      <publishTime>05/19/2020 01:40:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>05/19/2020 01:40:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Buffers.dll">
+      <publishTime>07/19/2017 17:01:28</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>05/15/2018 20:29:34</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Memory.dll">
+      <publishTime>04/17/2019 23:24:34</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Numerics.Vectors.dll">
+      <publishTime>07/19/2017 17:01:36</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>05/15/2018 20:29:44</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Runtime.CompilerServices.Unsafe.dll">
+      <publishTime>11/15/2019 16:37:58</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Text.Encoding.CodePages.dll">
+      <publishTime>11/29/2018 23:39:18</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Threading.Tasks.Extensions.dll">
+      <publishTime>06/18/2019 19:08:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>05/19/2020 01:50:06</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe.config">
+      <publishTime>05/19/2020 01:50:06</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.rsp">
+      <publishTime>05/19/2020 01:40:26</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>05/19/2020 01:52:02</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>05/19/2020 01:52:02</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>11/28/2018 12:04:24</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>11/28/2018 11:59:46</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>11/28/2018 12:00:12</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Deployment.dll">
+      <publishTime>11/28/2018 12:04:24</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.dll">
+      <publishTime>11/28/2018 12:04:24</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Razor.dll">
+      <publishTime>11/28/2018 12:04:24</publishTime>
+    </File>
+    <File Include="Content/PagedList.css">
+      <publishTime>10/12/2020 10:42:39</publishTime>
+    </File>
+    <File Include="css/all.css">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="css/animate.css">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="css/baguetteBox.min.css">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="css/bootsnav.css">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="css/bootstrap-select.css">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="css/bootstrap.min.css">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="css/carousel-ticker.css">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="css/code_animate.css">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="css/custom.css">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="css/jquery-ui.css">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="css/owl.carousel.min.css">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="css/responsive.css">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="css/style.css">
+      <publishTime>11/10/2020 20:47:20</publishTime>
+    </File>
+    <File Include="css/style_fruts.css">
+      <publishTime>11/10/2020 20:50:34</publishTime>
+    </File>
+    <File Include="css/style_tisanas.css">
+      <publishTime>11/10/2020 20:59:29</publishTime>
+    </File>
+    <File Include="css/superslides.css">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="DAL/Model1.edmx.diagram">
+      <publishTime>11/12/2020 20:28:14</publishTime>
+    </File>
+    <File Include="images/about-img.jpg">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="images/Add-Cart.png">
+      <publishTime>10/15/2020 09:27:24</publishTime>
+    </File>
+    <File Include="images/add-img-01.jpg">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="images/add-img-02.jpg">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="images/all-bg-title.jpg">
+      <publishTime>08/14/2020 00:46:15</publishTime>
+    </File>
+    <File Include="images/apple-touch-icon.png">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/banner-01.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/banner-02.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/banner-03.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/big-img-01.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/big-img-02.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/big-img-03.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/blog-img-01.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/blog-img-02.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/blog-img.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/cachete_angulado.jpg">
+      <publishTime>11/03/2020 11:00:07</publishTime>
+    </File>
+    <File Include="images/categories_img_01.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/categories_img_02.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/categories_img_03.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/contact-bg.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/delete.png">
+      <publishTime>10/17/2020 12:13:41</publishTime>
+    </File>
+    <File Include="images/favicon.ico">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/Fondo_Frutas_1.jpg">
+      <publishTime>10/17/2020 11:49:09</publishTime>
+    </File>
+    <File Include="images/Fondo_Frutas_2.jpg">
+      <publishTime>10/10/2020 11:38:10</publishTime>
+    </File>
+    <File Include="images/Fondo_Salsas_1.jpg">
+      <publishTime>08/14/2020 00:46:15</publishTime>
+    </File>
+    <File Include="images/Fondo_Salsas_2.jpg">
+      <publishTime>10/10/2020 11:43:13</publishTime>
+    </File>
+    <File Include="images/Fondo_Tisanas_1.jpg">
+      <publishTime>10/10/2020 11:25:19</publishTime>
+    </File>
+    <File Include="images/Fondo_Tisanas_2.jpg">
+      <publishTime>10/10/2020 11:41:18</publishTime>
+    </File>
+    <File Include="images/fruta/MangochileBolsa.JPG">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/fruta/MangoconchileBolsa_HEAD.JPG">
+      <publishTime>11/11/2020 09:21:16</publishTime>
+    </File>
+    <File Include="images/fruta/MangoNatural_Bolsa.JPG">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/fruta/MangoNatural_Bolsa_HEAD.JPG">
+      <publishTime>11/11/2020 09:20:50</publishTime>
+    </File>
+    <File Include="images/fruta/ManzanaCanela.jpg">
+      <publishTime>11/11/2020 09:36:42</publishTime>
+    </File>
+    <File Include="images/fruta/ManzanaCanela_HEAD.jpg">
+      <publishTime>11/11/2020 09:39:18</publishTime>
+    </File>
+    <File Include="images/fruta/ManzananaConChile.jpg">
+      <publishTime>11/11/2020 09:37:11</publishTime>
+    </File>
+    <File Include="images/fruta/ManzananaConChile_HEAD.JPG">
+      <publishTime>11/11/2020 10:20:12</publishTime>
+    </File>
+    <File Include="images/fruta/ManzananaturalBolsa.JPG">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/fruta/ManzananaturalBolsa_HEAD.JPG">
+      <publishTime>11/11/2020 09:22:46</publishTime>
+    </File>
+    <File Include="images/fruta/Mixchilebolsa.JPG">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/fruta/Mixchilebolsa_HEAD.JPG">
+      <publishTime>11/11/2020 09:23:06</publishTime>
+    </File>
+    <File Include="images/fruta/MixNaturalBolsa.JPG">
+      <publishTime>11/03/2020 10:59:58</publishTime>
+    </File>
+    <File Include="images/fruta/MixNaturalBolsa_HEAD.JPG">
+      <publishTime>11/11/2020 09:24:27</publishTime>
+    </File>
+    <File Include="images/fruta/PinaConChile.JPG">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/fruta/PinaConChile_HEAD.jpg">
+      <publishTime>11/11/2020 09:24:47</publishTime>
+    </File>
+    <File Include="images/fruta/PinaNatural.JPG">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/fruta/PinaNatural_HEAD.jpg">
+      <publishTime>11/11/2020 09:27:47</publishTime>
+    </File>
+    <File Include="images/fruta/PlatanoBolsa.JPG">
+      <publishTime>11/03/2020 11:00:06</publishTime>
+    </File>
+    <File Include="images/fruta/PlatanoBolsa_HEAD.jpg">
+      <publishTime>11/11/2020 09:34:04</publishTime>
+    </File>
+    <File Include="images/fruta/Sanifrut.jpg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/gallery-img-01.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/gallery-img-02.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/gallery-img-03.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/gallery-img-04.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/gallery-img-05.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/gallery-img-06.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/gallery-img-07.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/gallery-img-08.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/gallery-img-09.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/gallery-img-10.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/gallery-img-11.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/gallery-img-12.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/img-1.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/img-2.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/img-3.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/img-pro-01.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/img-pro-02.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/img-pro-03.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/img-pro-04.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/ins-bg.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/instagram-img-01.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/instagram-img-02.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/instagram-img-03.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/instagram-img-04.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/instagram-img-05.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/instagram-img-06.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/instagram-img-07.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/instagram-img-08.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/instagram-img-09.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/logo.jpg">
+      <publishTime>11/27/2020 00:39:14</publishTime>
+    </File>
+    <File Include="images/logo.png">
+      <publishTime>10/10/2020 10:27:25</publishTime>
+    </File>
+    <File Include="images/Logo_PM.jpg">
+      <publishTime>08/14/2020 00:46:16</publishTime>
+    </File>
+    <File Include="images/mas.jpg">
+      <publishTime>10/17/2020 16:29:30</publishTime>
+    </File>
+    <File Include="images/menos.jpg">
+      <publishTime>10/17/2020 16:29:30</publishTime>
+    </File>
+    <File Include="images/payment-icon/1.png">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/payment-icon/2.png">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/payment-icon/3.png">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/payment-icon/4.png">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/payment-icon/5.png">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/payment-icon/6.png">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/payment-icon/7.png">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/salsas/10A.jpg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/salsas/11A.jpg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/salsas/12A.jpg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/salsas/13A.jpg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/salsas/1A.jpg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/salsas/1B.jpg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/salsas/20200720-mango-habanero-superior.jpg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/salsas/20200720-verde ampliada.jpg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/salsas/2A.jpg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/salsas/2B.jpg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/salsas/3A.jpg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/salsas/3B.jpg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/salsas/4A.jpg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/salsas/4B.jpg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/salsas/5A.jpg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/salsas/5B.jpg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/salsas/6A.jpeg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/salsas/6B.jpeg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/salsas/7A.jpg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/salsas/8A.jpg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/salsas/9A.jpg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/salsas/MainSalsaArbolTomatillo.jpg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/salsas/MainSalsaAsadaDeArbol.jpg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/salsas/MainSalsaCacahuate.jpg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/salsas/MainSalsaChileHabanero.jpg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/salsas/MainSalsaChilePeron.jpg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/salsas/MainSalsaMacha.jpg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/salsas/MainSalsaMangoHabanero.jpg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/salsas/MainSalsaMoritaTomate.jpg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/salsas/MainSalsaMoritaTomatillo.jpg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/salsas/MainSalsaRoja.jpg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/salsas/MainSalsaVerde.jpg">
+      <publishTime>10/12/2020 12:42:45</publishTime>
+    </File>
+    <File Include="images/salsas/Sanifrut.jpg">
+      <publishTime>10/12/2020 12:42:45</publishTime>
+    </File>
+    <File Include="images/smp-img-01.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/smp-img-02.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/smp-img-03.jpg">
+      <publishTime>10/10/2020 09:00:24</publishTime>
+    </File>
+    <File Include="images/tisanas/PoncheManzanaCanela.jpg">
+      <publishTime>11/11/2020 10:40:36</publishTime>
+    </File>
+    <File Include="images/tisanas/PoncheManzanaCanela_HEAD.jpg">
+      <publishTime>11/11/2020 10:47:59</publishTime>
+    </File>
+    <File Include="images/tisanas/PoncheTradicional.jpg">
+      <publishTime>11/11/2020 10:41:10</publishTime>
+    </File>
+    <File Include="images/tisanas/ponche_frutas.jpg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/tisanas/ponche_tradicional.jpg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/tisanas/ponche_tradicional_HEAD.jpg">
+      <publishTime>11/11/2020 11:34:45</publishTime>
+    </File>
+    <File Include="images/tisanas/TisanaFrutosAmarillos.jpg">
+      <publishTime>11/11/2020 10:38:07</publishTime>
+    </File>
+    <File Include="images/tisanas/TisanaFrutosAmarillos_HEAD.jpg">
+      <publishTime>11/11/2020 11:04:58</publishTime>
+    </File>
+    <File Include="images/tisanas/tisanas_portada.jpg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/tisanas/tisana_manzana.jpg">
+      <publishTime>10/12/2020 12:42:44</publishTime>
+    </File>
+    <File Include="images/TisanasHead.jpg">
+      <publishTime>11/10/2020 21:03:52</publishTime>
+    </File>
+    <File Include="js/baguetteBox.min.js">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="js/bootsnav.js">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="js/bootstrap-select.js">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="js/bootstrap.min.js">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="js/contact-form-script.js">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="js/custom.js">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="js/form-validator.min.js">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="js/images-loded.min.js">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="js/inewsticker.js">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="js/isotope.min.js">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="js/jquery-3.2.1.min.js">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="js/jquery-ui.js">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="js/jquery.nicescroll.min.js">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="js/jquery.superslides.min.js">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="js/owl.carousel.min.js">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="js/popper.min.js">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="php/form-process.php">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>06/09/2023 14:22:15</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.4.1.js">
+      <publishTime>10/12/2020 12:35:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.4.1.min.js">
+      <publishTime>10/12/2020 12:35:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.4.1.min.map">
+      <publishTime>10/12/2020 12:35:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.4.1.slim.js">
+      <publishTime>10/12/2020 12:35:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.4.1.slim.min.js">
+      <publishTime>10/12/2020 12:35:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.4.1.slim.min.map">
+      <publishTime>10/12/2020 12:35:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>10/12/2020 12:35:40</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>10/12/2020 12:35:40</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>10/12/2020 12:35:41</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>10/12/2020 12:35:41</publishTime>
+    </File>
+    <File Include="Views/Home/Contacto.cshtml">
+      <publishTime>11/12/2020 21:29:00</publishTime>
+    </File>
+    <File Include="Views/Home/Distribuidores.cshtml">
+      <publishTime>10/17/2020 11:01:57</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>12/05/2020 08:40:05</publishTime>
+    </File>
+    <File Include="Views/Home/PoliticasPrivacidad.cshtml">
+      <publishTime>10/17/2020 09:36:55</publishTime>
+    </File>
+    <File Include="Views/Home/QuienesSomos.cshtml">
+      <publishTime>10/17/2020 09:30:12</publishTime>
+    </File>
+    <File Include="Views/Home/Salsas.cshtml">
+      <publishTime>10/12/2020 12:34:44</publishTime>
+    </File>
+    <File Include="Views/Login/Index.cshtml">
+      <publishTime>10/13/2020 10:44:21</publishTime>
+    </File>
+    <File Include="Views/Registro/Index.cshtml">
+      <publishTime>12/05/2020 11:16:30</publishTime>
+    </File>
+    <File Include="Views/Registro/Registration.cshtml">
+      <publishTime>10/13/2020 09:43:04</publishTime>
+    </File>
+    <File Include="Views/Shared/free_images.cshtml">
+      <publishTime>11/12/2020 23:36:17</publishTime>
+    </File>
+    <File Include="Views/Shared/_master.cshtml">
+      <publishTime>11/26/2020 11:53:00</publishTime>
+    </File>
+    <File Include="Views/Shared/_master_store_frutas.cshtml">
+      <publishTime>11/12/2020 23:36:17</publishTime>
+    </File>
+    <File Include="Views/Shared/_master_store_salsas.cshtml">
+      <publishTime>11/12/2020 23:36:17</publishTime>
+    </File>
+    <File Include="Views/Shared/_master_store_tisanas.cshtml">
+      <publishTime>11/12/2020 23:36:17</publishTime>
+    </File>
+    <File Include="Views/Store/Carrito.cshtml">
+      <publishTime>12/05/2020 10:09:41</publishTime>
+    </File>
+    <File Include="Views/Store/CheckOut.cshtml">
+      <publishTime>12/05/2020 10:03:09</publishTime>
+    </File>
+    <File Include="Views/Store/Comprobante.cshtml">
+      <publishTime>12/05/2020 10:07:52</publishTime>
+    </File>
+    <File Include="Views/Store/Detalle.cshtml">
+      <publishTime>11/27/2020 23:26:47</publishTime>
+    </File>
+    <File Include="Views/Store/Envio.cshtml">
+      <publishTime>12/05/2020 10:10:45</publishTime>
+    </File>
+    <File Include="Views/Store/FailureView.cshtml">
+      <publishTime>10/13/2020 11:02:07</publishTime>
+    </File>
+    <File Include="Views/Store/Frutas.cshtml">
+      <publishTime>12/05/2020 08:43:34</publishTime>
+    </File>
+    <File Include="Views/Store/Pagado.cshtml">
+      <publishTime>12/05/2020 10:05:31</publishTime>
+    </File>
+    <File Include="Views/Store/ProductoDetalle.cshtml">
+      <publishTime>10/13/2020 11:04:28</publishTime>
+    </File>
+    <File Include="Views/Store/Salsas.cshtml">
+      <publishTime>12/05/2020 08:43:34</publishTime>
+    </File>
+    <File Include="Views/Store/SuccessView.cshtml">
+      <publishTime>10/13/2020 11:05:30</publishTime>
+    </File>
+    <File Include="Views/Store/Tisanas.cshtml">
+      <publishTime>12/05/2020 09:12:35</publishTime>
+    </File>
+    <File Include="Views/Store/_DesgloceCarrito.cshtml">
+      <publishTime>10/18/2020 04:46:39</publishTime>
+    </File>
+    <File Include="Views/Store/_Member.cshtml">
+      <publishTime>10/18/2020 03:29:01</publishTime>
+    </File>
+    <File Include="Views/web.config">
+      <publishTime>10/10/2020 08:57:58</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>06/09/2023 14:22:14</publishTime>
+    </File>
+    <File Include="webfonts/fa-brands-400.eot">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="webfonts/fa-brands-400.svg">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="webfonts/fa-brands-400.ttf">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="webfonts/fa-brands-400.woff">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="webfonts/fa-brands-400.woff2">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="webfonts/fa-regular-400.eot">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="webfonts/fa-regular-400.svg">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="webfonts/fa-regular-400.ttf">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="webfonts/fa-regular-400.woff">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="webfonts/fa-regular-400.woff2">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="webfonts/fa-solid-900.eot">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="webfonts/fa-solid-900.svg">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="webfonts/fa-solid-900.ttf">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="webfonts/fa-solid-900.woff">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+    <File Include="webfonts/fa-solid-900.woff2">
+      <publishTime>10/10/2020 09:00:23</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

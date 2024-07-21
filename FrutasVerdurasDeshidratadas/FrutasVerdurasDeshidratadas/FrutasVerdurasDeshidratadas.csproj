@@ -1,0 +1,529 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1FB80829-418F-4016-A860-E6DCBBE274FD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FrutasVerdurasDeshidratadas</RootNamespace>
+    <AssemblyName>FrutasVerdurasDeshidratadas</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44382</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=3.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="PayPal, Version=1.9.1.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PayPal.1.9.1\lib\net451\PayPal.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\PagedList.css" />
+    <Content Include="css\all.css" />
+    <Content Include="css\animate.css" />
+    <Content Include="css\baguetteBox.min.css" />
+    <Content Include="css\bootsnav.css" />
+    <Content Include="css\bootstrap-select.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\carousel-ticker.css" />
+    <Content Include="css\code_animate.css" />
+    <Content Include="css\custom.css" />
+    <Content Include="css\jquery-ui.css" />
+    <Content Include="css\owl.carousel.min.css" />
+    <Content Include="css\responsive.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\style_fruts.css" />
+    <Content Include="css\style_tisanas.css" />
+    <Content Include="css\superslides.css" />
+    <Content Include="DAL\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DAL\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Global.asax" />
+    <Content Include="images\about-img.jpg" />
+    <Content Include="images\Add-Cart.png" />
+    <Content Include="images\add-img-01.jpg" />
+    <Content Include="images\add-img-02.jpg" />
+    <Content Include="images\all-bg-title.jpg" />
+    <Content Include="images\apple-touch-icon.png" />
+    <Content Include="images\banner-01.jpg" />
+    <Content Include="images\banner-02.jpg" />
+    <Content Include="images\banner-03.jpg" />
+    <Content Include="images\big-img-01.jpg" />
+    <Content Include="images\big-img-02.jpg" />
+    <Content Include="images\big-img-03.jpg" />
+    <Content Include="images\blog-img-01.jpg" />
+    <Content Include="images\blog-img-02.jpg" />
+    <Content Include="images\blog-img.jpg" />
+    <Content Include="images\cachete_angulado.jpg" />
+    <Content Include="images\categories_img_01.jpg" />
+    <Content Include="images\categories_img_02.jpg" />
+    <Content Include="images\categories_img_03.jpg" />
+    <Content Include="images\contact-bg.jpg" />
+    <Content Include="images\delete.png" />
+    <Content Include="images\favicon.ico" />
+    <Content Include="images\Fondo_Frutas_1.jpg" />
+    <Content Include="images\Fondo_Frutas_2.jpg" />
+    <Content Include="images\Fondo_Salsas_1.jpg" />
+    <Content Include="images\Fondo_Salsas_2.jpg" />
+    <Content Include="images\Fondo_Tisanas_1.jpg" />
+    <Content Include="images\Fondo_Tisanas_2.jpg" />
+    <Content Include="images\fruta\MangochileBolsa.JPG" />
+    <Content Include="images\fruta\MangoconchileBolsa_HEAD.JPG" />
+    <Content Include="images\fruta\MangoNatural_Bolsa.JPG" />
+    <Content Include="images\fruta\MangoNatural_Bolsa_HEAD.JPG" />
+    <Content Include="images\fruta\ManzanaCanela.jpg" />
+    <Content Include="images\fruta\ManzanaCanela_HEAD.jpg" />
+    <Content Include="images\fruta\ManzananaConChile.jpg" />
+    <Content Include="images\fruta\ManzananaConChile_HEAD.JPG" />
+    <Content Include="images\fruta\ManzananaturalBolsa.JPG" />
+    <Content Include="images\fruta\ManzananaturalBolsa_HEAD.JPG" />
+    <Content Include="images\fruta\Mixchilebolsa.JPG" />
+    <Content Include="images\fruta\Mixchilebolsa_HEAD.JPG" />
+    <Content Include="images\fruta\MixNaturalBolsa.JPG" />
+    <Content Include="images\fruta\MixNaturalBolsa_HEAD.JPG" />
+    <Content Include="images\fruta\PinaConChile.JPG" />
+    <Content Include="images\fruta\PinaConChile_HEAD.jpg" />
+    <Content Include="images\fruta\PinaNatural.JPG" />
+    <Content Include="images\fruta\PinaNatural_HEAD.jpg" />
+    <Content Include="images\fruta\PlatanoBolsa.JPG" />
+    <Content Include="images\fruta\PlatanoBolsa_HEAD.jpg" />
+    <Content Include="images\fruta\Sanifrut.jpg" />
+    <Content Include="images\gallery-img-01.jpg" />
+    <Content Include="images\gallery-img-02.jpg" />
+    <Content Include="images\gallery-img-03.jpg" />
+    <Content Include="images\gallery-img-04.jpg" />
+    <Content Include="images\gallery-img-05.jpg" />
+    <Content Include="images\gallery-img-06.jpg" />
+    <Content Include="images\gallery-img-07.jpg" />
+    <Content Include="images\gallery-img-08.jpg" />
+    <Content Include="images\gallery-img-09.jpg" />
+    <Content Include="images\gallery-img-10.jpg" />
+    <Content Include="images\gallery-img-11.jpg" />
+    <Content Include="images\gallery-img-12.jpg" />
+    <Content Include="images\img-1.jpg" />
+    <Content Include="images\img-2.jpg" />
+    <Content Include="images\img-3.jpg" />
+    <Content Include="images\img-pro-01.jpg" />
+    <Content Include="images\img-pro-02.jpg" />
+    <Content Include="images\img-pro-03.jpg" />
+    <Content Include="images\img-pro-04.jpg" />
+    <Content Include="images\ins-bg.jpg" />
+    <Content Include="images\instagram-img-01.jpg" />
+    <Content Include="images\instagram-img-02.jpg" />
+    <Content Include="images\instagram-img-03.jpg" />
+    <Content Include="images\instagram-img-04.jpg" />
+    <Content Include="images\instagram-img-05.jpg" />
+    <Content Include="images\instagram-img-06.jpg" />
+    <Content Include="images\instagram-img-07.jpg" />
+    <Content Include="images\instagram-img-08.jpg" />
+    <Content Include="images\instagram-img-09.jpg" />
+    <Content Include="images\logo.jpg" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\Logo_PM.jpg" />
+    <Content Include="images\mas.jpg" />
+    <Content Include="images\menos.jpg" />
+    <Content Include="images\payment-icon\1.png" />
+    <Content Include="images\payment-icon\2.png" />
+    <Content Include="images\payment-icon\3.png" />
+    <Content Include="images\payment-icon\4.png" />
+    <Content Include="images\payment-icon\5.png" />
+    <Content Include="images\payment-icon\6.png" />
+    <Content Include="images\payment-icon\7.png" />
+    <Content Include="images\salsas\10A.jpg" />
+    <Content Include="images\salsas\11A.jpg" />
+    <Content Include="images\salsas\12A.jpg" />
+    <Content Include="images\salsas\13A.jpg" />
+    <Content Include="images\salsas\1A.jpg" />
+    <Content Include="images\salsas\1B.jpg" />
+    <Content Include="images\salsas\20200720-mango-habanero-superior.jpg" />
+    <Content Include="images\salsas\20200720-verde ampliada.jpg" />
+    <Content Include="images\salsas\2A.jpg" />
+    <Content Include="images\salsas\2B.jpg" />
+    <Content Include="images\salsas\3A.jpg" />
+    <Content Include="images\salsas\3B.jpg" />
+    <Content Include="images\salsas\4A.jpg" />
+    <Content Include="images\salsas\4B.jpg" />
+    <Content Include="images\salsas\5A.jpg" />
+    <Content Include="images\salsas\5B.jpg" />
+    <Content Include="images\salsas\6A.jpeg" />
+    <Content Include="images\salsas\6B.jpeg" />
+    <Content Include="images\salsas\7A.jpg" />
+    <Content Include="images\salsas\8A.jpg" />
+    <Content Include="images\salsas\9A.jpg" />
+    <Content Include="images\salsas\MainSalsaArbolTomatillo.jpg" />
+    <Content Include="images\salsas\MainSalsaAsadaDeArbol.jpg" />
+    <Content Include="images\salsas\MainSalsaCacahuate.jpg" />
+    <Content Include="images\salsas\MainSalsaChileHabanero.jpg" />
+    <Content Include="images\salsas\MainSalsaChilePeron.jpg" />
+    <Content Include="images\salsas\MainSalsaMacha.jpg" />
+    <Content Include="images\salsas\MainSalsaMangoHabanero.jpg" />
+    <Content Include="images\salsas\MainSalsaMoritaTomate.jpg" />
+    <Content Include="images\salsas\MainSalsaMoritaTomatillo.jpg" />
+    <Content Include="images\salsas\MainSalsaRoja.jpg" />
+    <Content Include="images\salsas\MainSalsaVerde.jpg" />
+    <Content Include="images\salsas\Sanifrut.jpg" />
+    <Content Include="images\smp-img-01.jpg" />
+    <Content Include="images\smp-img-02.jpg" />
+    <Content Include="images\smp-img-03.jpg" />
+    <Content Include="images\TisanasHead.jpg" />
+    <Content Include="images\tisanas\PoncheManzanaCanela.jpg" />
+    <Content Include="images\tisanas\PoncheManzanaCanela_HEAD.jpg" />
+    <Content Include="images\tisanas\PoncheTradicional.jpg" />
+    <Content Include="images\tisanas\ponche_frutas.jpg" />
+    <Content Include="images\tisanas\ponche_tradicional.jpg" />
+    <Content Include="images\tisanas\ponche_tradicional_HEAD.jpg" />
+    <Content Include="images\tisanas\TisanaFrutosAmarillos.jpg" />
+    <Content Include="images\tisanas\TisanaFrutosAmarillos_HEAD.jpg" />
+    <Content Include="images\tisanas\tisanas_portada.jpg" />
+    <Content Include="images\tisanas\tisana_manzana.jpg" />
+    <Content Include="js\baguetteBox.min.js" />
+    <Content Include="js\bootsnav.js" />
+    <Content Include="js\bootstrap-select.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\contact-form-script.js" />
+    <Content Include="js\custom.js" />
+    <Content Include="js\form-validator.min.js" />
+    <Content Include="js\images-loded.min.js" />
+    <Content Include="js\inewsticker.js" />
+    <Content Include="js\isotope.min.js" />
+    <Content Include="js\jquery-3.2.1.min.js" />
+    <Content Include="js\jquery-ui.js" />
+    <Content Include="js\jquery.nicescroll.min.js" />
+    <Content Include="js\jquery.superslides.min.js" />
+    <Content Include="js\owl.carousel.min.js" />
+    <Content Include="js\popper.min.js" />
+    <Content Include="php\form-process.php" />
+    <EntityDeploy Include="DAL\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DAL\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="webfonts\fa-brands-400.svg" />
+    <Content Include="webfonts\fa-regular-400.svg" />
+    <Content Include="webfonts\fa-solid-900.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\RegistroController.cs" />
+    <Compile Include="Controllers\StoreController.cs" />
+    <Compile Include="DAL\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Tbl_CartStatus.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Tbl_Category.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Tbl_Contacto.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Tbl_Distribuidor.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Tbl_MemberRole.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Tbl_Members.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Tbl_Order.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Tbl_Partners.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Tbl_PayPal_Config.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Tbl_Product.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Tbl_Roles.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Tbl_ShippingDetails.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Tbl_ShoppingCart.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Tbl_Status_Distribuidor.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Tbl_System_Config.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\USP_Get_Elements_From_ShoppingCart_By_ID_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\USP_Get_Elements_To_ShoppingCart_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\USP_Get_Products_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\USP_Proceed_To_Pay_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\USP_Search_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\USP_ShowOrderCompleted_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\Configuration.cs" />
+    <Compile Include="Models\Contacto.cs" />
+    <Compile Include="Models\CryptoEncription.cs" />
+    <Compile Include="Models\Distribuidor.cs" />
+    <Compile Include="Models\EncriptaPassword.cs" />
+    <Compile Include="Models\Envios.cs" />
+    <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\Member.cs" />
+    <Compile Include="Models\Orden.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Shopping.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\GenericRepository.cs" />
+    <Compile Include="Repository\GenericUnitOfWork.cs" />
+    <Compile Include="Repository\IRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <None Include="packages.config" />
+    <Content Include="Views\Shared\_master.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Salsas.cshtml" />
+    <Content Include="Views\Store\Salsas.cshtml" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Views\Shared\_master_store_salsas.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Registro\Index.cshtml" />
+    <Content Include="Views\Registro\Registration.cshtml" />
+    <Content Include="Views\Store\Comprobante.cshtml" />
+    <Content Include="Views\Store\Envio.cshtml" />
+    <Content Include="Views\Store\FailureView.cshtml" />
+    <Content Include="Views\Store\Frutas.cshtml" />
+    <Content Include="Views\Store\Pagado.cshtml" />
+    <Content Include="Views\Store\ProductoDetalle.cshtml" />
+    <Content Include="Views\Store\SuccessView.cshtml" />
+    <Content Include="Views\Store\Tisanas.cshtml" />
+    <Content Include="Views\Home\QuienesSomos.cshtml" />
+    <Content Include="Views\Home\PoliticasPrivacidad.cshtml" />
+    <Content Include="Views\Home\Distribuidores.cshtml" />
+    <Content Include="Views\Store\Carrito.cshtml" />
+    <Content Include="Views\Shared\free_images.cshtml" />
+    <Content Include="Views\Store\Detalle.cshtml" />
+    <Content Include="Views\Store\_Member.cshtml" />
+    <Content Include="Views\Store\_DesgloceCarrito.cshtml" />
+    <Content Include="Views\Store\CheckOut.cshtml" />
+    <Content Include="Views\Shared\_master_store_frutas.cshtml" />
+    <Content Include="Views\Shared\_master_store_tisanas.cshtml" />
+    <Content Include="Views\Home\Contacto.cshtml" />
+    <Content Include="Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="webfonts\fa-brands-400.eot" />
+    <Content Include="webfonts\fa-brands-400.ttf" />
+    <Content Include="webfonts\fa-brands-400.woff" />
+    <Content Include="webfonts\fa-brands-400.woff2" />
+    <Content Include="webfonts\fa-regular-400.eot" />
+    <Content Include="webfonts\fa-regular-400.ttf" />
+    <Content Include="webfonts\fa-regular-400.woff" />
+    <Content Include="webfonts\fa-regular-400.woff2" />
+    <Content Include="webfonts\fa-solid-900.eot" />
+    <Content Include="webfonts\fa-solid-900.ttf" />
+    <Content Include="webfonts\fa-solid-900.woff" />
+    <Content Include="webfonts\fa-solid-900.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Comprobantes\" />
+    <Folder Include="Properties\PublishProfiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55265</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44382/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>https://localhost:44382/</IISAppRootUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

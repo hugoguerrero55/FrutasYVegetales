@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FrutasyVegetalesDeshidratadosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Tbl_CartStatus">
+    <Key>
+      <PropertyRef Name="CartStatusId" />
+    </Key>
+    <Property Name="CartStatusId" Type="int" Nullable="false" />
+    <Property Name="CartStatus" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Tbl_Category">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="IsDelete" Type="bit" />
+  </EntityType>
+  <EntityType Name="Tbl_Contacto">
+    <Key>
+      <PropertyRef Name="Id_Contacto" />
+    </Key>
+    <Property Name="Id_Contacto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="eMail" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="TextoMensaje" Type="nvarchar" MaxLength="3000" />
+    <Property Name="FechaContacto" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Distribuidor">
+    <Key>
+      <PropertyRef Name="Id_Distribuidor" />
+    </Key>
+    <Property Name="Id_Distribuidor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fecha_Registro" Type="datetime" Nullable="false" />
+    <Property Name="Id_EstatusDist" Type="int" Nullable="false" />
+    <Property Name="Estado" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="Ciudad_Municipio" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="Nombres" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="CalleNumero" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="Colonia" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="CP" Type="int" />
+    <Property Name="Telefono" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="eMail" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="EsProspecto" Type="bit" Nullable="false" />
+    <Property Name="FolioSolicitud" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tbl_MemberRole">
+    <Key>
+      <PropertyRef Name="MemberRoleId" />
+    </Key>
+    <Property Name="MemberRoleId" Type="int" Nullable="false" />
+    <Property Name="MemberId" Type="int" />
+    <Property Name="RoleId" Type="int" />
+  </EntityType>
+  <EntityType Name="Tbl_Members">
+    <Key>
+      <PropertyRef Name="MemberId" />
+    </Key>
+    <Property Name="MemberId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmailId" Type="nvarchar" MaxLength="200" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="IsDelete" Type="bit" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="ModifiedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Tbl_Order">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="int" Nullable="false" />
+    <Property Name="AmountPaid" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="TransactionID" Type="varchar" MaxLength="50" />
+    <Property Name="NumberOfPieces" Type="int" Nullable="false" />
+    <Property Name="Folio" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="OrderPlacedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Tbl_Partners">
+    <Key>
+      <PropertyRef Name="Id_Parner" />
+    </Key>
+    <Property Name="Id_Parner" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="eMail" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="AddressLine1" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="Estate" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="City" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="Tbl_PayPal_Config">
+    <Key>
+      <PropertyRef Name="Id_Paypal_Config" />
+    </Key>
+    <Property Name="Id_Paypal_Config" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Parner" Type="int" Nullable="false" />
+    <Property Name="mode" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="connectionTimeout" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="requestRetries" Type="int" Nullable="false" />
+    <Property Name="divisa" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="clientId" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="clientSecret" Type="varchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Product">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductName" Type="varchar" MaxLength="100" />
+    <Property Name="CategoryId" Type="int" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="IsDelete" Type="bit" />
+    <Property Name="CreatedDate" Type="date" />
+    <Property Name="ModifiedDate" Type="date" />
+    <Property Name="Description" Type="varchar" MaxLength="500" />
+    <Property Name="ProductImage" Type="varchar" MaxLength="256" />
+    <Property Name="ProdDetailImage" Type="varchar" MaxLength="256" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="IsFeatured" Type="bit" />
+    <Property Name="ActualStock" Type="int" />
+    <Property Name="MinStock" Type="int" />
+    <Property Name="MaxStock" Type="int" />
+    <Property Name="Image" Type="image" />
+  </EntityType>
+  <EntityType Name="Tbl_Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tbl_ShippingDetails">
+    <Key>
+      <PropertyRef Name="ShippingDetailId" />
+    </Key>
+    <Property Name="ShippingDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MemberId" Type="int" />
+    <Property Name="AddressLine" Type="varchar" MaxLength="100" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="State" Type="varchar" MaxLength="50" />
+    <Property Name="Municipio" Type="varchar" MaxLength="50" />
+    <Property Name="ZipCode" Type="varchar" MaxLength="50" />
+    <Property Name="OrderId" Type="varchar" MaxLength="50" />
+    <Property Name="AmountPaid" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TransactionID" Type="varchar" MaxLength="50" />
+    <Property Name="OrderPlacedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Tbl_ShoppingCart">
+    <Key>
+      <PropertyRef Name="Id_ShoppingCart" />
+    </Key>
+    <Property Name="Id_ShoppingCart" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductId" Type="int" Nullable="false" />
+    <Property Name="MemberId" Type="int" Nullable="false" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="Total" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="AddedOn" Type="datetime" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CartStatusId" Type="int" Nullable="false" />
+    <Property Name="ShippingDetailId" Type="int" />
+  </EntityType>
+  <EntityType Name="Tbl_Status_Distribuidor">
+    <Key>
+      <PropertyRef Name="Id_EstatusDist" />
+    </Key>
+    <Property Name="Id_EstatusDist" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EstatusDistribuidor" Type="varchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tbl_System_Config">
+    <Key>
+      <PropertyRef Name="Id_SystemConfig" />
+    </Key>
+    <Property Name="Id_SystemConfig" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Parner" Type="int" Nullable="false" />
+    <Property Name="SMTP" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="PORT" Type="int" Nullable="false" />
+    <Property Name="Sender" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="PswSender" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="SOReceiver" Type="varchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Tbl_Distribuidor_Tbl_Status_Distribuidor">
+    <End Role="Tbl_Status_Distribuidor" Type="Self.Tbl_Status_Distribuidor" Multiplicity="1" />
+    <End Role="Tbl_Distribuidor" Type="Self.Tbl_Distribuidor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Status_Distribuidor">
+        <PropertyRef Name="Id_EstatusDist" />
+      </Principal>
+      <Dependent Role="Tbl_Distribuidor">
+        <PropertyRef Name="Id_EstatusDist" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_MemberRole_Tbl_Roles">
+    <End Role="Tbl_Roles" Type="Self.Tbl_Roles" Multiplicity="0..1" />
+    <End Role="Tbl_MemberRole" Type="Self.Tbl_MemberRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="Tbl_MemberRole">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_PayPal_Config_Tbl_Partners">
+    <End Role="Tbl_Partners" Type="Self.Tbl_Partners" Multiplicity="1" />
+    <End Role="Tbl_PayPal_Config" Type="Self.Tbl_PayPal_Config" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Partners">
+        <PropertyRef Name="Id_Parner" />
+      </Principal>
+      <Dependent Role="Tbl_PayPal_Config">
+        <PropertyRef Name="Id_Parner" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Product_Tbl_Category">
+    <End Role="Tbl_Category" Type="Self.Tbl_Category" Multiplicity="0..1" />
+    <End Role="Tbl_Product" Type="Self.Tbl_Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Category">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="Tbl_Product">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_ShippingDetails_Tbl_Members">
+    <End Role="Tbl_Members" Type="Self.Tbl_Members" Multiplicity="0..1" />
+    <End Role="Tbl_ShippingDetails" Type="Self.Tbl_ShippingDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Members">
+        <PropertyRef Name="MemberId" />
+      </Principal>
+      <Dependent Role="Tbl_ShippingDetails">
+        <PropertyRef Name="MemberId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_ShoppingCart_Tbl_CartStatus">
+    <End Role="Tbl_CartStatus" Type="Self.Tbl_CartStatus" Multiplicity="1" />
+    <End Role="Tbl_ShoppingCart" Type="Self.Tbl_ShoppingCart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_CartStatus">
+        <PropertyRef Name="CartStatusId" />
+      </Principal>
+      <Dependent Role="Tbl_ShoppingCart">
+        <PropertyRef Name="CartStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_ShoppingCart_Tbl_Members">
+    <End Role="Tbl_Members" Type="Self.Tbl_Members" Multiplicity="1" />
+    <End Role="Tbl_ShoppingCart" Type="Self.Tbl_ShoppingCart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Members">
+        <PropertyRef Name="MemberId" />
+      </Principal>
+      <Dependent Role="Tbl_ShoppingCart">
+        <PropertyRef Name="MemberId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_ShoppingCart_Tbl_Product">
+    <End Role="Tbl_Product" Type="Self.Tbl_Product" Multiplicity="1" />
+    <End Role="Tbl_ShoppingCart" Type="Self.Tbl_ShoppingCart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="Tbl_ShoppingCart">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_ShoppingCart_Tbl_ShippingDetails">
+    <End Role="Tbl_ShippingDetails" Type="Self.Tbl_ShippingDetails" Multiplicity="0..1" />
+    <End Role="Tbl_ShoppingCart" Type="Self.Tbl_ShoppingCart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_ShippingDetails">
+        <PropertyRef Name="ShippingDetailId" />
+      </Principal>
+      <Dependent Role="Tbl_ShoppingCart">
+        <PropertyRef Name="ShippingDetailId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_System_Config_Tbl_Partners">
+    <End Role="Tbl_Partners" Type="Self.Tbl_Partners" Multiplicity="1" />
+    <End Role="Tbl_System_Config" Type="Self.Tbl_System_Config" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Partners">
+        <PropertyRef Name="Id_Parner" />
+      </Principal>
+      <Dependent Role="Tbl_System_Config">
+        <PropertyRef Name="Id_Parner" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="USP_Get_Elements_From_ShoppingCart_By_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_ProductId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="USP_Get_Elements_To_ShoppingCart" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_memberId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="USP_Get_Order_Details" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_MemberID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="USP_Get_Products" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_IdCategory" Type="int" Mode="In" />
+  </Function>
+  <Function Name="USP_Proceed_To_Pay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_MemberID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="USP_Search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="searchKey" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="USP_ShowOrderCompleted" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p_MemberID" Type="int" Mode="In" />
+    <Parameter Name="p_TransaccionID" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="FrutasyVegetalesDeshidratadosModelStoreContainer">
+    <EntitySet Name="Tbl_CartStatus" EntityType="Self.Tbl_CartStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Category" EntityType="Self.Tbl_Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Contacto" EntityType="Self.Tbl_Contacto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Distribuidor" EntityType="Self.Tbl_Distribuidor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_MemberRole" EntityType="Self.Tbl_MemberRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Members" EntityType="Self.Tbl_Members" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Order" EntityType="Self.Tbl_Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Partners" EntityType="Self.Tbl_Partners" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_PayPal_Config" EntityType="Self.Tbl_PayPal_Config" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Product" EntityType="Self.Tbl_Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Roles" EntityType="Self.Tbl_Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_ShippingDetails" EntityType="Self.Tbl_ShippingDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_ShoppingCart" EntityType="Self.Tbl_ShoppingCart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Status_Distribuidor" EntityType="Self.Tbl_Status_Distribuidor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_System_Config" EntityType="Self.Tbl_System_Config" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Tbl_Distribuidor_Tbl_Status_Distribuidor" Association="Self.FK_Tbl_Distribuidor_Tbl_Status_Distribuidor">
+      <End Role="Tbl_Status_Distribuidor" EntitySet="Tbl_Status_Distribuidor" />
+      <End Role="Tbl_Distribuidor" EntitySet="Tbl_Distribuidor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_MemberRole_Tbl_Roles" Association="Self.FK_Tbl_MemberRole_Tbl_Roles">
+      <End Role="Tbl_Roles" EntitySet="Tbl_Roles" />
+      <End Role="Tbl_MemberRole" EntitySet="Tbl_MemberRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_PayPal_Config_Tbl_Partners" Association="Self.FK_Tbl_PayPal_Config_Tbl_Partners">
+      <End Role="Tbl_Partners" EntitySet="Tbl_Partners" />
+      <End Role="Tbl_PayPal_Config" EntitySet="Tbl_PayPal_Config" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Product_Tbl_Category" Association="Self.FK_Tbl_Product_Tbl_Category">
+      <End Role="Tbl_Category" EntitySet="Tbl_Category" />
+      <End Role="Tbl_Product" EntitySet="Tbl_Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_ShippingDetails_Tbl_Members" Association="Self.FK_Tbl_ShippingDetails_Tbl_Members">
+      <End Role="Tbl_Members" EntitySet="Tbl_Members" />
+      <End Role="Tbl_ShippingDetails" EntitySet="Tbl_ShippingDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_ShoppingCart_Tbl_CartStatus" Association="Self.FK_Tbl_ShoppingCart_Tbl_CartStatus">
+      <End Role="Tbl_CartStatus" EntitySet="Tbl_CartStatus" />
+      <End Role="Tbl_ShoppingCart" EntitySet="Tbl_ShoppingCart" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_ShoppingCart_Tbl_Members" Association="Self.FK_Tbl_ShoppingCart_Tbl_Members">
+      <End Role="Tbl_Members" EntitySet="Tbl_Members" />
+      <End Role="Tbl_ShoppingCart" EntitySet="Tbl_ShoppingCart" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_ShoppingCart_Tbl_Product" Association="Self.FK_Tbl_ShoppingCart_Tbl_Product">
+      <End Role="Tbl_Product" EntitySet="Tbl_Product" />
+      <End Role="Tbl_ShoppingCart" EntitySet="Tbl_ShoppingCart" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_ShoppingCart_Tbl_ShippingDetails" Association="Self.FK_Tbl_ShoppingCart_Tbl_ShippingDetails">
+      <End Role="Tbl_ShippingDetails" EntitySet="Tbl_ShippingDetails" />
+      <End Role="Tbl_ShoppingCart" EntitySet="Tbl_ShoppingCart" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_System_Config_Tbl_Partners" Association="Self.FK_Tbl_System_Config_Tbl_Partners">
+      <End Role="Tbl_Partners" EntitySet="Tbl_Partners" />
+      <End Role="Tbl_System_Config" EntitySet="Tbl_System_Config" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

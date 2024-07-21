@@ -1,0 +1,104 @@
+﻿@model PagedList.IPagedList<FrutasVerdurasDeshidratadas.DAL.Tbl_Product>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Salsas";
+    Layout = "~/Views/Shared/_master_store_tisanas.cshtml";
+
+    //creamos el objeto random y asignamos a una variable string
+    Random r = new Random();
+    string a = r.Next().ToString();
+    string _detalle = string.Empty;
+}
+
+<!-- Start Products  -->
+<div class="products-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="title-all text-center">
+                    <h3>Ya tenemos WhatsApp para que realices tus pedídos de forma rápida y fácil. ¡Escribenos al 443 118 7727! 🛒📲</h3>
+                    <h1>Línea Ponches y Tisanas, conoce nuestra amplia variedad.</h1>
+                    <p>El sabor de nuestra tierra disponible en tu mesa en un minuto.</p>
+                    <hr />
+                    <p>
+                        Pomches y Tisanas 100% de Frutas Naturales
+                        Frutas Deshidratadas SaniFrut de México para el mundo pone en tus manos todo el sabor de Nuestra Tierra, de la manera más práctica, económica y saludable, nunca antes vista en el mercado.
+                        Te ofrece el conjunto perfecto de verduras, semillas y legumbres 100% naturales (totalmente libres de conservadores, espesantes, saborizantes o colorantes), el cual simplemente podrás ver y oler.
+                        Después de elegir cualquiera de nuestras Salsas Mexicanas Deshidratadas, en tan solo 1 minuto tu paladar degustará el más auténtico sabor de nuestra tierra, ya que únicamente agregas agua, sal y licuas o mueles en molcajete, para finalmente acompañar tus alimentos preferidos.
+                        Olvídate de almacenar por semanas los tomates y otras verduras en tu refrigerador, porque ahora ya puedes tener en tu alacena hasta 10 diferentes salsas deshidratadas tradicionales y de calidad gourmet para elegir cada día la que mejor combine con tus alimentos. El resultado, es el invaluable ahorro de tiempo y dinero.
+                    </p>
+                    <p style="color: #008055">En la compra de 10 pzs. la onceava es gratis, pruébalas todas.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="special-menu text-center">
+                    <div class="button-group filter-button-group">
+                    </div>
+                </div>
+            </div>
+        </div>
+        @for (int _item = 0; _item <= Model.Count - 1; _item = _item + 4)
+        {
+            int _cont = _item + 1;
+            <div class="row special-list">
+                @for (int _element = _cont; _element <= 4; _element++)
+                {
+                    if (_element <= Model.Count)//Valido que este dentro del total de registros
+                    {
+                        <div class="col-lg-3 col-md-6 special-grid best-seller">
+                            <div class="products-single fix">
+                                <div class="box-img-hover">
+                                    <div class="type-lb">
+                                        @*<form method="post">
+                                                <p class="sale"></p>
+                                            </form>*@
+                                    </div>
+                                    <img src="~/images/tisanas/@Html.DisplayFor(modelItem => Model[_element - 1].ProductImage)?a=@a" class="img-fluid" alt="Image">
+                                    <div class="mask-icon">
+                                        <ul>
+                                            <li><a href="@Url.Action("Detalle", "Store", new { _productId =  @Html.DisplayFor(modelItem => Model[_element - 1].ProductId)}, null)" data-toggle="tooltip" data-placement="right" title="Detalle"><i class="fas fa-eye"></i></a></li>
+                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Comparar"><i class="fas fa-sync-alt"></i></a></li>
+                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Lista de deseos"><i class="far fa-heart"></i></a></li>
+                                        </ul>
+                                        @*OJO ESTO ESTA COMENTADO MOMENTANEAMENTE*@
+                                        @if (Model[_element - 1].ActualStock > 0)
+                                        {
+                                            <a class="cart" href="@Url.Action("AgregaAlCarrito", "Store", new { _productId =  @Html.DisplayFor(modelItem => Model[_element - 1].ProductId), _posicion = "salsas" }, null)">
+                                                Agregar al Carrito
+                                            </a>
+                                        }
+                                    </div>
+                                </div>
+                                <div class="why-text">
+                                    @if (Model[_element - 1].ActualStock > 0)
+                                    {
+                                        <h4>@Html.DisplayFor(modelItem => Model[_element - 1].Description)</h4>
+                                    }
+                                    else
+                                    {
+                                        <h4>Producto no disponible por el momento</h4>
+                                    }
+                                    <strong>
+                                        <a style="color: #008055" href="@Url.Action("Detalle", "Store", new { _productId =  @Html.DisplayFor(modelItem => Model[_element - 1].ProductId)}, null)">
+                                            Ver Detalles del Producto
+                                        </a>
+                                    </strong>
+                                    <hr />
+                                    <h5> $@Html.DisplayFor(modelItem => Model[_element - 1].Price)</h5>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        }
+        @Html.Raw(TempData["msg"])
+    </div>
+    Página @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) de @Model.PageCount
+    @Html.PagedListPager(Model, page => Url.Action("Tisanas", new { page, _idCategory = ViewBag.CategoriaId }))
+</div>
+<!-- End Products  -->

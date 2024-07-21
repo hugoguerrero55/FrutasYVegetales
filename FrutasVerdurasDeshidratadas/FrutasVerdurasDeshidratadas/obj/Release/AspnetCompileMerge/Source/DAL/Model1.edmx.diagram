@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="73b348f2763c4ba7b3b919c62f2f1d78" Name="Diagram1">
+        <EntityTypeShape EntityType="FrutasyVegetalesDeshidratadosModel.Tbl_CartStatus" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FrutasyVegetalesDeshidratadosModel.Tbl_Category" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FrutasyVegetalesDeshidratadosModel.Tbl_Distribuidor" Width="1.5" PointX="8" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="FrutasyVegetalesDeshidratadosModel.Tbl_MemberRole" Width="1.5" PointX="10" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FrutasyVegetalesDeshidratadosModel.Tbl_Members" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FrutasyVegetalesDeshidratadosModel.Tbl_Order" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FrutasyVegetalesDeshidratadosModel.Tbl_Product" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FrutasyVegetalesDeshidratadosModel.Tbl_Roles" Width="1.5" PointX="7.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="FrutasyVegetalesDeshidratadosModel.Tbl_ShippingDetails" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FrutasyVegetalesDeshidratadosModel.Tbl_ShoppingCart" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="FrutasyVegetalesDeshidratadosModel.Tbl_Status_Distribuidor" Width="1.5" PointX="5.75" PointY="7.125" IsExpanded="true" />
+        <AssociationConnector Association="FrutasyVegetalesDeshidratadosModel.FK_Tbl_ShoppingCart_Tbl_CartStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="FrutasyVegetalesDeshidratadosModel.FK_Tbl_Product_Tbl_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="FrutasyVegetalesDeshidratadosModel.FK_Tbl_Distribuidor_Tbl_Status_Distribuidor" ManuallyRouted="false" />
+        <AssociationConnector Association="FrutasyVegetalesDeshidratadosModel.FK_Tbl_MemberRole_Tbl_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="FrutasyVegetalesDeshidratadosModel.FK_Tbl_ShippingDetails_Tbl_Members" ManuallyRouted="false" />
+        <AssociationConnector Association="FrutasyVegetalesDeshidratadosModel.FK_Tbl_ShoppingCart_Tbl_Members" ManuallyRouted="false" />
+        <AssociationConnector Association="FrutasyVegetalesDeshidratadosModel.FK_Tbl_ShoppingCart_Tbl_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="FrutasyVegetalesDeshidratadosModel.FK_Tbl_ShoppingCart_Tbl_ShippingDetails" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="FrutasyVegetalesDeshidratadosModel.Tbl_Contacto" Width="1.5" PointX="10.375" PointY="6.75" />
+        <EntityTypeShape EntityType="FrutasyVegetalesDeshidratadosModel.Tbl_Partners" Width="1.5" PointX="5.375" PointY="12.75" />
+        <EntityTypeShape EntityType="FrutasyVegetalesDeshidratadosModel.Tbl_PayPal_Config" Width="1.5" PointX="7.625" PointY="11.125" />
+        <EntityTypeShape EntityType="FrutasyVegetalesDeshidratadosModel.Tbl_System_Config" Width="1.5" PointX="7.625" PointY="14.625" />
+        <AssociationConnector Association="FrutasyVegetalesDeshidratadosModel.FK_Tbl_PayPal_Config_Tbl_Partners" />
+        <AssociationConnector Association="FrutasyVegetalesDeshidratadosModel.FK_Tbl_System_Config_Tbl_Partners" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

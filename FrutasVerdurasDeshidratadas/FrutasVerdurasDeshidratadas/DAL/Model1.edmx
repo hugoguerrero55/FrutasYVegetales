@@ -1,0 +1,1144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FrutasyVegetalesDeshidratadosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Tbl_CartStatus">
+          <Key>
+            <PropertyRef Name="CartStatusId" />
+          </Key>
+          <Property Name="CartStatusId" Type="int" Nullable="false" />
+          <Property Name="CartStatus" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Tbl_Category">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="int" Nullable="false" />
+          <Property Name="CategoryName" Type="nvarchar" MaxLength="100" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
+        <EntityType Name="Tbl_Contacto">
+          <Key>
+            <PropertyRef Name="Id_Contacto" />
+          </Key>
+          <Property Name="Id_Contacto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="eMail" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="TextoMensaje" Type="nvarchar" MaxLength="3000" />
+          <Property Name="FechaContacto" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Distribuidor">
+          <Key>
+            <PropertyRef Name="Id_Distribuidor" />
+          </Key>
+          <Property Name="Id_Distribuidor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fecha_Registro" Type="datetime" Nullable="false" />
+          <Property Name="Id_EstatusDist" Type="int" Nullable="false" />
+          <Property Name="Estado" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="Ciudad_Municipio" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="Nombres" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="CalleNumero" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="Colonia" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="CP" Type="int" />
+          <Property Name="Telefono" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="eMail" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="EsProspecto" Type="bit" Nullable="false" />
+          <Property Name="FolioSolicitud" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tbl_MemberRole">
+          <Key>
+            <PropertyRef Name="MemberRoleId" />
+          </Key>
+          <Property Name="MemberRoleId" Type="int" Nullable="false" />
+          <Property Name="MemberId" Type="int" />
+          <Property Name="RoleId" Type="int" />
+        </EntityType>
+        <EntityType Name="Tbl_Members">
+          <Key>
+            <PropertyRef Name="MemberId" />
+          </Key>
+          <Property Name="MemberId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmailId" Type="nvarchar" MaxLength="200" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="IsDelete" Type="bit" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="ModifiedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Tbl_Order">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="OrderId" Type="int" Nullable="false" />
+          <Property Name="AmountPaid" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="TransactionID" Type="varchar" MaxLength="50" />
+          <Property Name="NumberOfPieces" Type="int" Nullable="false" />
+          <Property Name="Folio" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="OrderPlacedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Tbl_Partners">
+          <Key>
+            <PropertyRef Name="Id_Parner" />
+          </Key>
+          <Property Name="Id_Parner" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="eMail" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="AddressLine1" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="Estate" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="City" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="Tbl_PayPal_Config">
+          <Key>
+            <PropertyRef Name="Id_Paypal_Config" />
+          </Key>
+          <Property Name="Id_Paypal_Config" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_Parner" Type="int" Nullable="false" />
+          <Property Name="mode" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="connectionTimeout" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="requestRetries" Type="int" Nullable="false" />
+          <Property Name="divisa" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="clientId" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="clientSecret" Type="varchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Product">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductName" Type="varchar" MaxLength="100" />
+          <Property Name="CategoryId" Type="int" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="IsDelete" Type="bit" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="ModifiedDate" Type="date" />
+          <Property Name="Description" Type="varchar" MaxLength="500" />
+          <Property Name="ProductImage" Type="varchar" MaxLength="256" />
+          <Property Name="ProdDetailImage" Type="varchar" MaxLength="256" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="IsFeatured" Type="bit" />
+          <Property Name="ActualStock" Type="int" />
+          <Property Name="MinStock" Type="int" />
+          <Property Name="MaxStock" Type="int" />
+          <Property Name="Image" Type="image" />
+        </EntityType>
+        <EntityType Name="Tbl_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tbl_ShippingDetails">
+          <Key>
+            <PropertyRef Name="ShippingDetailId" />
+          </Key>
+          <Property Name="ShippingDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MemberId" Type="int" />
+          <Property Name="AddressLine" Type="varchar" MaxLength="100" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="State" Type="varchar" MaxLength="50" />
+          <Property Name="Municipio" Type="varchar" MaxLength="50" />
+          <Property Name="ZipCode" Type="varchar" MaxLength="50" />
+          <Property Name="OrderId" Type="varchar" MaxLength="50" />
+          <Property Name="AmountPaid" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TransactionID" Type="varchar" MaxLength="50" />
+          <Property Name="OrderPlacedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Tbl_ShoppingCart">
+          <Key>
+            <PropertyRef Name="Id_ShoppingCart" />
+          </Key>
+          <Property Name="Id_ShoppingCart" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="MemberId" Type="int" Nullable="false" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Total" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="AddedOn" Type="datetime" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="CartStatusId" Type="int" Nullable="false" />
+          <Property Name="ShippingDetailId" Type="int" />
+        </EntityType>
+        <EntityType Name="Tbl_Status_Distribuidor">
+          <Key>
+            <PropertyRef Name="Id_EstatusDist" />
+          </Key>
+          <Property Name="Id_EstatusDist" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EstatusDistribuidor" Type="varchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tbl_System_Config">
+          <Key>
+            <PropertyRef Name="Id_SystemConfig" />
+          </Key>
+          <Property Name="Id_SystemConfig" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_Parner" Type="int" Nullable="false" />
+          <Property Name="SMTP" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="PORT" Type="int" Nullable="false" />
+          <Property Name="Sender" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="PswSender" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="SOReceiver" Type="varchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Tbl_Distribuidor_Tbl_Status_Distribuidor">
+          <End Role="Tbl_Status_Distribuidor" Type="Self.Tbl_Status_Distribuidor" Multiplicity="1" />
+          <End Role="Tbl_Distribuidor" Type="Self.Tbl_Distribuidor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Status_Distribuidor">
+              <PropertyRef Name="Id_EstatusDist" />
+            </Principal>
+            <Dependent Role="Tbl_Distribuidor">
+              <PropertyRef Name="Id_EstatusDist" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_MemberRole_Tbl_Roles">
+          <End Role="Tbl_Roles" Type="Self.Tbl_Roles" Multiplicity="0..1" />
+          <End Role="Tbl_MemberRole" Type="Self.Tbl_MemberRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="Tbl_MemberRole">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_PayPal_Config_Tbl_Partners">
+          <End Role="Tbl_Partners" Type="Self.Tbl_Partners" Multiplicity="1" />
+          <End Role="Tbl_PayPal_Config" Type="Self.Tbl_PayPal_Config" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Partners">
+              <PropertyRef Name="Id_Parner" />
+            </Principal>
+            <Dependent Role="Tbl_PayPal_Config">
+              <PropertyRef Name="Id_Parner" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Product_Tbl_Category">
+          <End Role="Tbl_Category" Type="Self.Tbl_Category" Multiplicity="0..1" />
+          <End Role="Tbl_Product" Type="Self.Tbl_Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Category">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="Tbl_Product">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_ShippingDetails_Tbl_Members">
+          <End Role="Tbl_Members" Type="Self.Tbl_Members" Multiplicity="0..1" />
+          <End Role="Tbl_ShippingDetails" Type="Self.Tbl_ShippingDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Members">
+              <PropertyRef Name="MemberId" />
+            </Principal>
+            <Dependent Role="Tbl_ShippingDetails">
+              <PropertyRef Name="MemberId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_ShoppingCart_Tbl_CartStatus">
+          <End Role="Tbl_CartStatus" Type="Self.Tbl_CartStatus" Multiplicity="1" />
+          <End Role="Tbl_ShoppingCart" Type="Self.Tbl_ShoppingCart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_CartStatus">
+              <PropertyRef Name="CartStatusId" />
+            </Principal>
+            <Dependent Role="Tbl_ShoppingCart">
+              <PropertyRef Name="CartStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_ShoppingCart_Tbl_Members">
+          <End Role="Tbl_Members" Type="Self.Tbl_Members" Multiplicity="1" />
+          <End Role="Tbl_ShoppingCart" Type="Self.Tbl_ShoppingCart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Members">
+              <PropertyRef Name="MemberId" />
+            </Principal>
+            <Dependent Role="Tbl_ShoppingCart">
+              <PropertyRef Name="MemberId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_ShoppingCart_Tbl_Product">
+          <End Role="Tbl_Product" Type="Self.Tbl_Product" Multiplicity="1" />
+          <End Role="Tbl_ShoppingCart" Type="Self.Tbl_ShoppingCart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="Tbl_ShoppingCart">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_ShoppingCart_Tbl_ShippingDetails">
+          <End Role="Tbl_ShippingDetails" Type="Self.Tbl_ShippingDetails" Multiplicity="0..1" />
+          <End Role="Tbl_ShoppingCart" Type="Self.Tbl_ShoppingCart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_ShippingDetails">
+              <PropertyRef Name="ShippingDetailId" />
+            </Principal>
+            <Dependent Role="Tbl_ShoppingCart">
+              <PropertyRef Name="ShippingDetailId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_System_Config_Tbl_Partners">
+          <End Role="Tbl_Partners" Type="Self.Tbl_Partners" Multiplicity="1" />
+          <End Role="Tbl_System_Config" Type="Self.Tbl_System_Config" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Partners">
+              <PropertyRef Name="Id_Parner" />
+            </Principal>
+            <Dependent Role="Tbl_System_Config">
+              <PropertyRef Name="Id_Parner" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="USP_Get_Elements_From_ShoppingCart_By_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="p_ProductId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_Get_Elements_To_ShoppingCart" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="p_memberId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_Get_Order_Details" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="p_MemberID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_Get_Products" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="p_IdCategory" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_Proceed_To_Pay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="p_MemberID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_Search" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="searchKey" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="USP_ShowOrderCompleted" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="p_MemberID" Type="int" Mode="In" />
+          <Parameter Name="p_TransaccionID" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="FrutasyVegetalesDeshidratadosModelStoreContainer">
+          <EntitySet Name="Tbl_CartStatus" EntityType="Self.Tbl_CartStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Category" EntityType="Self.Tbl_Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Contacto" EntityType="Self.Tbl_Contacto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Distribuidor" EntityType="Self.Tbl_Distribuidor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_MemberRole" EntityType="Self.Tbl_MemberRole" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Members" EntityType="Self.Tbl_Members" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Order" EntityType="Self.Tbl_Order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Partners" EntityType="Self.Tbl_Partners" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_PayPal_Config" EntityType="Self.Tbl_PayPal_Config" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Product" EntityType="Self.Tbl_Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Roles" EntityType="Self.Tbl_Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_ShippingDetails" EntityType="Self.Tbl_ShippingDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_ShoppingCart" EntityType="Self.Tbl_ShoppingCart" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Status_Distribuidor" EntityType="Self.Tbl_Status_Distribuidor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_System_Config" EntityType="Self.Tbl_System_Config" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Tbl_Distribuidor_Tbl_Status_Distribuidor" Association="Self.FK_Tbl_Distribuidor_Tbl_Status_Distribuidor">
+            <End Role="Tbl_Status_Distribuidor" EntitySet="Tbl_Status_Distribuidor" />
+            <End Role="Tbl_Distribuidor" EntitySet="Tbl_Distribuidor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_MemberRole_Tbl_Roles" Association="Self.FK_Tbl_MemberRole_Tbl_Roles">
+            <End Role="Tbl_Roles" EntitySet="Tbl_Roles" />
+            <End Role="Tbl_MemberRole" EntitySet="Tbl_MemberRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_PayPal_Config_Tbl_Partners" Association="Self.FK_Tbl_PayPal_Config_Tbl_Partners">
+            <End Role="Tbl_Partners" EntitySet="Tbl_Partners" />
+            <End Role="Tbl_PayPal_Config" EntitySet="Tbl_PayPal_Config" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Product_Tbl_Category" Association="Self.FK_Tbl_Product_Tbl_Category">
+            <End Role="Tbl_Category" EntitySet="Tbl_Category" />
+            <End Role="Tbl_Product" EntitySet="Tbl_Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_ShippingDetails_Tbl_Members" Association="Self.FK_Tbl_ShippingDetails_Tbl_Members">
+            <End Role="Tbl_Members" EntitySet="Tbl_Members" />
+            <End Role="Tbl_ShippingDetails" EntitySet="Tbl_ShippingDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_ShoppingCart_Tbl_CartStatus" Association="Self.FK_Tbl_ShoppingCart_Tbl_CartStatus">
+            <End Role="Tbl_CartStatus" EntitySet="Tbl_CartStatus" />
+            <End Role="Tbl_ShoppingCart" EntitySet="Tbl_ShoppingCart" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_ShoppingCart_Tbl_Members" Association="Self.FK_Tbl_ShoppingCart_Tbl_Members">
+            <End Role="Tbl_Members" EntitySet="Tbl_Members" />
+            <End Role="Tbl_ShoppingCart" EntitySet="Tbl_ShoppingCart" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_ShoppingCart_Tbl_Product" Association="Self.FK_Tbl_ShoppingCart_Tbl_Product">
+            <End Role="Tbl_Product" EntitySet="Tbl_Product" />
+            <End Role="Tbl_ShoppingCart" EntitySet="Tbl_ShoppingCart" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_ShoppingCart_Tbl_ShippingDetails" Association="Self.FK_Tbl_ShoppingCart_Tbl_ShippingDetails">
+            <End Role="Tbl_ShippingDetails" EntitySet="Tbl_ShippingDetails" />
+            <End Role="Tbl_ShoppingCart" EntitySet="Tbl_ShoppingCart" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_System_Config_Tbl_Partners" Association="Self.FK_Tbl_System_Config_Tbl_Partners">
+            <End Role="Tbl_Partners" EntitySet="Tbl_Partners" />
+            <End Role="Tbl_System_Config" EntitySet="Tbl_System_Config" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FrutasyVegetalesDeshidratadosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Tbl_CartStatus">
+          <Key>
+            <PropertyRef Name="CartStatusId" />
+          </Key>
+          <Property Name="CartStatusId" Type="Int32" Nullable="false" />
+          <Property Name="CartStatus" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Tbl_ShoppingCart" Relationship="Self.FK_Tbl_ShoppingCart_Tbl_CartStatus" FromRole="Tbl_CartStatus" ToRole="Tbl_ShoppingCart" />
+        </EntityType>
+        <EntityType Name="Tbl_Category">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="Int32" Nullable="false" />
+          <Property Name="CategoryName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsDelete" Type="Boolean" />
+          <NavigationProperty Name="Tbl_Product" Relationship="Self.FK_Tbl_Product_Tbl_Category" FromRole="Tbl_Category" ToRole="Tbl_Product" />
+        </EntityType>
+        <EntityType Name="Tbl_Distribuidor">
+          <Key>
+            <PropertyRef Name="Id_Distribuidor" />
+          </Key>
+          <Property Name="Id_Distribuidor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha_Registro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Id_EstatusDist" Type="Int32" Nullable="false" />
+          <Property Name="Estado" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ciudad_Municipio" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombres" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CalleNumero" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Colonia" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CP" Type="Int32" />
+          <Property Name="Telefono" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="eMail" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EsProspecto" Type="Boolean" Nullable="false" />
+          <Property Name="FolioSolicitud" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Tbl_Status_Distribuidor" Relationship="Self.FK_Tbl_Distribuidor_Tbl_Status_Distribuidor" FromRole="Tbl_Distribuidor" ToRole="Tbl_Status_Distribuidor" />
+        </EntityType>
+        <EntityType Name="Tbl_MemberRole">
+          <Key>
+            <PropertyRef Name="MemberRoleId" />
+          </Key>
+          <Property Name="MemberRoleId" Type="Int32" Nullable="false" />
+          <Property Name="MemberId" Type="Int32" />
+          <Property Name="RoleId" Type="Int32" />
+          <NavigationProperty Name="Tbl_Roles" Relationship="Self.FK_Tbl_MemberRole_Tbl_Roles" FromRole="Tbl_MemberRole" ToRole="Tbl_Roles" />
+        </EntityType>
+        <EntityType Name="Tbl_Members">
+          <Key>
+            <PropertyRef Name="MemberId" />
+          </Key>
+          <Property Name="MemberId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmailId" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsDelete" Type="Boolean" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Tbl_ShippingDetails" Relationship="Self.FK_Tbl_ShippingDetails_Tbl_Members" FromRole="Tbl_Members" ToRole="Tbl_ShippingDetails" />
+          <NavigationProperty Name="Tbl_ShoppingCart" Relationship="Self.FK_Tbl_ShoppingCart_Tbl_Members" FromRole="Tbl_Members" ToRole="Tbl_ShoppingCart" />
+        </EntityType>
+        <EntityType Name="Tbl_Order">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="OrderId" Type="Int32" Nullable="false" />
+          <Property Name="AmountPaid" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="TransactionID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NumberOfPieces" Type="Int32" Nullable="false" />
+          <Property Name="Folio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OrderPlacedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Tbl_Product">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CategoryId" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsDelete" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ProductImage" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="ProdDetailImage" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="IsFeatured" Type="Boolean" />
+          <Property Name="ActualStock" Type="Int32" />
+          <Property Name="MinStock" Type="Int32" />
+          <Property Name="MaxStock" Type="Int32" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Tbl_Category" Relationship="Self.FK_Tbl_Product_Tbl_Category" FromRole="Tbl_Product" ToRole="Tbl_Category" />
+          <NavigationProperty Name="Tbl_ShoppingCart" Relationship="Self.FK_Tbl_ShoppingCart_Tbl_Product" FromRole="Tbl_Product" ToRole="Tbl_ShoppingCart" />
+        </EntityType>
+        <EntityType Name="Tbl_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+          <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Tbl_MemberRole" Relationship="Self.FK_Tbl_MemberRole_Tbl_Roles" FromRole="Tbl_Roles" ToRole="Tbl_MemberRole" />
+        </EntityType>
+        <EntityType Name="Tbl_ShippingDetails">
+          <Key>
+            <PropertyRef Name="ShippingDetailId" />
+          </Key>
+          <Property Name="ShippingDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MemberId" Type="Int32" />
+          <Property Name="OrderId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AmountPaid" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TransactionID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OrderPlacedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Tbl_Members" Relationship="Self.FK_Tbl_ShippingDetails_Tbl_Members" FromRole="Tbl_ShippingDetails" ToRole="Tbl_Members" />
+          <NavigationProperty Name="Tbl_ShoppingCart" Relationship="Self.FK_Tbl_ShoppingCart_Tbl_ShippingDetails" FromRole="Tbl_ShippingDetails" ToRole="Tbl_ShoppingCart" />
+          <Property Name="AddressLine" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Municipio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ZipCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Tbl_ShoppingCart">
+          <Key>
+            <PropertyRef Name="Id_ShoppingCart" />
+          </Key>
+          <Property Name="Id_ShoppingCart" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="MemberId" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="Total" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="AddedOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CartStatusId" Type="Int32" Nullable="false" />
+          <Property Name="ShippingDetailId" Type="Int32" />
+          <NavigationProperty Name="Tbl_CartStatus" Relationship="Self.FK_Tbl_ShoppingCart_Tbl_CartStatus" FromRole="Tbl_ShoppingCart" ToRole="Tbl_CartStatus" />
+          <NavigationProperty Name="Tbl_Members" Relationship="Self.FK_Tbl_ShoppingCart_Tbl_Members" FromRole="Tbl_ShoppingCart" ToRole="Tbl_Members" />
+          <NavigationProperty Name="Tbl_Product" Relationship="Self.FK_Tbl_ShoppingCart_Tbl_Product" FromRole="Tbl_ShoppingCart" ToRole="Tbl_Product" />
+          <NavigationProperty Name="Tbl_ShippingDetails" Relationship="Self.FK_Tbl_ShoppingCart_Tbl_ShippingDetails" FromRole="Tbl_ShoppingCart" ToRole="Tbl_ShippingDetails" />
+        </EntityType>
+        <EntityType Name="Tbl_Status_Distribuidor">
+          <Key>
+            <PropertyRef Name="Id_EstatusDist" />
+          </Key>
+          <Property Name="Id_EstatusDist" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EstatusDistribuidor" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Tbl_Distribuidor" Relationship="Self.FK_Tbl_Distribuidor_Tbl_Status_Distribuidor" FromRole="Tbl_Status_Distribuidor" ToRole="Tbl_Distribuidor" />
+        </EntityType>
+        <Association Name="FK_Tbl_ShoppingCart_Tbl_CartStatus">
+          <End Role="Tbl_CartStatus" Type="Self.Tbl_CartStatus" Multiplicity="1" />
+          <End Role="Tbl_ShoppingCart" Type="Self.Tbl_ShoppingCart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_CartStatus">
+              <PropertyRef Name="CartStatusId" />
+            </Principal>
+            <Dependent Role="Tbl_ShoppingCart">
+              <PropertyRef Name="CartStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Product_Tbl_Category">
+          <End Role="Tbl_Category" Type="Self.Tbl_Category" Multiplicity="0..1" />
+          <End Role="Tbl_Product" Type="Self.Tbl_Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Category">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="Tbl_Product">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Distribuidor_Tbl_Status_Distribuidor">
+          <End Role="Tbl_Status_Distribuidor" Type="Self.Tbl_Status_Distribuidor" Multiplicity="1" />
+          <End Role="Tbl_Distribuidor" Type="Self.Tbl_Distribuidor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Status_Distribuidor">
+              <PropertyRef Name="Id_EstatusDist" />
+            </Principal>
+            <Dependent Role="Tbl_Distribuidor">
+              <PropertyRef Name="Id_EstatusDist" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_MemberRole_Tbl_Roles">
+          <End Role="Tbl_Roles" Type="Self.Tbl_Roles" Multiplicity="0..1" />
+          <End Role="Tbl_MemberRole" Type="Self.Tbl_MemberRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="Tbl_MemberRole">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_ShippingDetails_Tbl_Members">
+          <End Role="Tbl_Members" Type="Self.Tbl_Members" Multiplicity="0..1" />
+          <End Role="Tbl_ShippingDetails" Type="Self.Tbl_ShippingDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Members">
+              <PropertyRef Name="MemberId" />
+            </Principal>
+            <Dependent Role="Tbl_ShippingDetails">
+              <PropertyRef Name="MemberId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_ShoppingCart_Tbl_Members">
+          <End Role="Tbl_Members" Type="Self.Tbl_Members" Multiplicity="1" />
+          <End Role="Tbl_ShoppingCart" Type="Self.Tbl_ShoppingCart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Members">
+              <PropertyRef Name="MemberId" />
+            </Principal>
+            <Dependent Role="Tbl_ShoppingCart">
+              <PropertyRef Name="MemberId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_ShoppingCart_Tbl_Product">
+          <End Role="Tbl_Product" Type="Self.Tbl_Product" Multiplicity="1" />
+          <End Role="Tbl_ShoppingCart" Type="Self.Tbl_ShoppingCart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="Tbl_ShoppingCart">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_ShoppingCart_Tbl_ShippingDetails">
+          <End Role="Tbl_ShippingDetails" Type="Self.Tbl_ShippingDetails" Multiplicity="0..1" />
+          <End Role="Tbl_ShoppingCart" Type="Self.Tbl_ShoppingCart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_ShippingDetails">
+              <PropertyRef Name="ShippingDetailId" />
+            </Principal>
+            <Dependent Role="Tbl_ShoppingCart">
+              <PropertyRef Name="ShippingDetailId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FrutasyVegetalesDeshidratadosEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tbl_CartStatus" EntityType="Self.Tbl_CartStatus" />
+          <EntitySet Name="Tbl_Category" EntityType="Self.Tbl_Category" />
+          <EntitySet Name="Tbl_Distribuidor" EntityType="Self.Tbl_Distribuidor" />
+          <EntitySet Name="Tbl_MemberRole" EntityType="Self.Tbl_MemberRole" />
+          <EntitySet Name="Tbl_Members" EntityType="Self.Tbl_Members" />
+          <EntitySet Name="Tbl_Order" EntityType="Self.Tbl_Order" />
+          <EntitySet Name="Tbl_Product" EntityType="Self.Tbl_Product" />
+          <EntitySet Name="Tbl_Roles" EntityType="Self.Tbl_Roles" />
+          <EntitySet Name="Tbl_ShippingDetails" EntityType="Self.Tbl_ShippingDetails" />
+          <EntitySet Name="Tbl_ShoppingCart" EntityType="Self.Tbl_ShoppingCart" />
+          <EntitySet Name="Tbl_Status_Distribuidor" EntityType="Self.Tbl_Status_Distribuidor" />
+          <AssociationSet Name="FK_Tbl_ShoppingCart_Tbl_CartStatus" Association="Self.FK_Tbl_ShoppingCart_Tbl_CartStatus">
+            <End Role="Tbl_CartStatus" EntitySet="Tbl_CartStatus" />
+            <End Role="Tbl_ShoppingCart" EntitySet="Tbl_ShoppingCart" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Product_Tbl_Category" Association="Self.FK_Tbl_Product_Tbl_Category">
+            <End Role="Tbl_Category" EntitySet="Tbl_Category" />
+            <End Role="Tbl_Product" EntitySet="Tbl_Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Distribuidor_Tbl_Status_Distribuidor" Association="Self.FK_Tbl_Distribuidor_Tbl_Status_Distribuidor">
+            <End Role="Tbl_Status_Distribuidor" EntitySet="Tbl_Status_Distribuidor" />
+            <End Role="Tbl_Distribuidor" EntitySet="Tbl_Distribuidor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_MemberRole_Tbl_Roles" Association="Self.FK_Tbl_MemberRole_Tbl_Roles">
+            <End Role="Tbl_Roles" EntitySet="Tbl_Roles" />
+            <End Role="Tbl_MemberRole" EntitySet="Tbl_MemberRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_ShippingDetails_Tbl_Members" Association="Self.FK_Tbl_ShippingDetails_Tbl_Members">
+            <End Role="Tbl_Members" EntitySet="Tbl_Members" />
+            <End Role="Tbl_ShippingDetails" EntitySet="Tbl_ShippingDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_ShoppingCart_Tbl_Members" Association="Self.FK_Tbl_ShoppingCart_Tbl_Members">
+            <End Role="Tbl_Members" EntitySet="Tbl_Members" />
+            <End Role="Tbl_ShoppingCart" EntitySet="Tbl_ShoppingCart" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_ShoppingCart_Tbl_Product" Association="Self.FK_Tbl_ShoppingCart_Tbl_Product">
+            <End Role="Tbl_Product" EntitySet="Tbl_Product" />
+            <End Role="Tbl_ShoppingCart" EntitySet="Tbl_ShoppingCart" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_ShoppingCart_Tbl_ShippingDetails" Association="Self.FK_Tbl_ShoppingCart_Tbl_ShippingDetails">
+            <End Role="Tbl_ShippingDetails" EntitySet="Tbl_ShippingDetails" />
+            <End Role="Tbl_ShoppingCart" EntitySet="Tbl_ShoppingCart" />
+          </AssociationSet>
+          <FunctionImport Name="USP_Get_Elements_From_ShoppingCart_By_ID" ReturnType="Collection(FrutasyVegetalesDeshidratadosModel.USP_Get_Elements_From_ShoppingCart_By_ID_Result)">
+          <Parameter Name="p_ProductId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_Get_Elements_To_ShoppingCart" ReturnType="Collection(FrutasyVegetalesDeshidratadosModel.USP_Get_Elements_To_ShoppingCart_Result)">
+          <Parameter Name="p_memberId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_Get_Order_Details">
+          <Parameter Name="p_MemberID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_Get_Products" ReturnType="Collection(FrutasyVegetalesDeshidratadosModel.USP_Get_Products_Result)">
+          <Parameter Name="p_IdCategory" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_Proceed_To_Pay" ReturnType="Collection(FrutasyVegetalesDeshidratadosModel.USP_Proceed_To_Pay_Result)">
+          <Parameter Name="p_MemberID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_Search" ReturnType="Collection(FrutasyVegetalesDeshidratadosModel.USP_Search_Result)">
+          <Parameter Name="searchKey" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="USP_ShowOrderCompleted" ReturnType="Collection(FrutasyVegetalesDeshidratadosModel.USP_ShowOrderCompleted_Result)">
+            <Parameter Name="p_MemberID" Mode="In" Type="Int32" />
+            <Parameter Name="p_TransaccionID" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="Tbl_Contacto" EntityType="FrutasyVegetalesDeshidratadosModel.Tbl_Contacto" />
+          <EntitySet Name="Tbl_Partners" EntityType="FrutasyVegetalesDeshidratadosModel.Tbl_Partners" />
+          <EntitySet Name="Tbl_PayPal_Config" EntityType="FrutasyVegetalesDeshidratadosModel.Tbl_PayPal_Config" />
+          <EntitySet Name="Tbl_System_Config" EntityType="FrutasyVegetalesDeshidratadosModel.Tbl_System_Config" />
+          <AssociationSet Name="FK_Tbl_PayPal_Config_Tbl_Partners" Association="FrutasyVegetalesDeshidratadosModel.FK_Tbl_PayPal_Config_Tbl_Partners">
+            <End Role="Tbl_Partners" EntitySet="Tbl_Partners" />
+            <End Role="Tbl_PayPal_Config" EntitySet="Tbl_PayPal_Config" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_System_Config_Tbl_Partners" Association="FrutasyVegetalesDeshidratadosModel.FK_Tbl_System_Config_Tbl_Partners">
+            <End Role="Tbl_Partners" EntitySet="Tbl_Partners" />
+            <End Role="Tbl_System_Config" EntitySet="Tbl_System_Config" />
+          </AssociationSet>
+        </EntityContainer>
+        <ComplexType Name="USP_Get_Elements_From_ShoppingCart_By_ID_Result">
+          <Property Type="Decimal" Name="Price" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="SubTotal" Nullable="true" Precision="38" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="USP_Get_Elements_To_ShoppingCart_Result">
+          <Property Type="Int32" Name="Cantidad" Nullable="true" />
+          <Property Type="Int32" Name="ClaveProducto" Nullable="true" />
+          <Property Type="String" Name="ProdDetailImage" Nullable="true" MaxLength="256" />
+          <Property Type="String" Name="ProductName" Nullable="true" MaxLength="256" />
+          <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="256" />
+          <Property Type="String" Name="Price" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="SubTotal" Nullable="true" MaxLength="4000" />
+        </ComplexType>
+        <ComplexType Name="USP_Get_Products_Result">
+          <Property Type="Int32" Name="Clave" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Categoría" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Estatus" Nullable="false" MaxLength="8" />
+          <Property Type="String" Name="Eliminado" Nullable="false" MaxLength="2" />
+          <Property Type="String" Name="Descripción" Nullable="true" MaxLength="500" />
+          <Property Type="Decimal" Name="Precio" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="En_Stock" Nullable="true" />
+          <Property Type="Int32" Name="Stock_Mínimo" Nullable="true" />
+          <Property Type="Int32" Name="Stock_Tope" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="USP_Proceed_To_Pay_Result">
+          <Property Type="Int32" Name="Cantidad" Nullable="true" />
+          <Property Type="Int32" Name="ClaveProducto" Nullable="true" />
+          <Property Type="String" Name="NomProducto" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="PrecioUnitario" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="SubTotal" Nullable="true" MaxLength="4000" />
+        </ComplexType>
+        <ComplexType Name="USP_Search_Result">
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="500" />
+          <Property Type="Decimal" Name="Price" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="ProductId" Nullable="false" />
+          <Property Type="String" Name="ProductImage" Nullable="true" MaxLength="256" />
+          <Property Type="String" Name="ProductName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="USP_ShowOrderCompleted_Result">
+          <Property Type="String" Name="Nombres" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Apellidos" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="eMail" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Direccion" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Ciudad" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Estado" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Municipio" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CP" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Folio" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="Importe" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="Transaccion" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="Fecha" Nullable="true" Precision="23" />
+        </ComplexType>
+        <EntityType Name="Tbl_Contacto">
+          <Key>
+            <PropertyRef Name="Id_Contacto" />
+          </Key>
+          <Property Name="Id_Contacto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="eMail" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="TextoMensaje" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+          <Property Name="FechaContacto" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Tbl_Partners">
+          <Key>
+            <PropertyRef Name="Id_Parner" />
+          </Key>
+          <Property Name="Id_Parner" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="eMail" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="AddressLine1" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="Estate" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Tbl_PayPal_Config" Relationship="FrutasyVegetalesDeshidratadosModel.FK_Tbl_PayPal_Config_Tbl_Partners" FromRole="Tbl_Partners" ToRole="Tbl_PayPal_Config" />
+          <NavigationProperty Name="Tbl_System_Config" Relationship="FrutasyVegetalesDeshidratadosModel.FK_Tbl_System_Config_Tbl_Partners" FromRole="Tbl_Partners" ToRole="Tbl_System_Config" />
+        </EntityType>
+        <EntityType Name="Tbl_PayPal_Config">
+          <Key>
+            <PropertyRef Name="Id_Paypal_Config" />
+          </Key>
+          <Property Name="Id_Paypal_Config" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_Parner" Type="Int32" Nullable="false" />
+          <Property Name="mode" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="connectionTimeout" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="requestRetries" Type="Int32" Nullable="false" />
+          <Property Name="divisa" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="clientId" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="clientSecret" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Tbl_Partners" Relationship="FrutasyVegetalesDeshidratadosModel.FK_Tbl_PayPal_Config_Tbl_Partners" FromRole="Tbl_PayPal_Config" ToRole="Tbl_Partners" />
+        </EntityType>
+        <EntityType Name="Tbl_System_Config">
+          <Key>
+            <PropertyRef Name="Id_SystemConfig" />
+          </Key>
+          <Property Name="Id_SystemConfig" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_Parner" Type="Int32" Nullable="false" />
+          <Property Name="SMTP" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="PORT" Type="Int32" Nullable="false" />
+          <Property Name="Sender" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="PswSender" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="SOReceiver" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Tbl_Partners" Relationship="FrutasyVegetalesDeshidratadosModel.FK_Tbl_System_Config_Tbl_Partners" FromRole="Tbl_System_Config" ToRole="Tbl_Partners" />
+        </EntityType>
+        <Association Name="FK_Tbl_PayPal_Config_Tbl_Partners">
+          <End Type="FrutasyVegetalesDeshidratadosModel.Tbl_Partners" Role="Tbl_Partners" Multiplicity="1" />
+          <End Type="FrutasyVegetalesDeshidratadosModel.Tbl_PayPal_Config" Role="Tbl_PayPal_Config" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Partners">
+              <PropertyRef Name="Id_Parner" />
+            </Principal>
+            <Dependent Role="Tbl_PayPal_Config">
+              <PropertyRef Name="Id_Parner" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_System_Config_Tbl_Partners">
+          <End Type="FrutasyVegetalesDeshidratadosModel.Tbl_Partners" Role="Tbl_Partners" Multiplicity="1" />
+          <End Type="FrutasyVegetalesDeshidratadosModel.Tbl_System_Config" Role="Tbl_System_Config" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Partners">
+              <PropertyRef Name="Id_Parner" />
+            </Principal>
+            <Dependent Role="Tbl_System_Config">
+              <PropertyRef Name="Id_Parner" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FrutasyVegetalesDeshidratadosModelStoreContainer" CdmEntityContainer="FrutasyVegetalesDeshidratadosEntities">
+          <EntitySetMapping Name="Tbl_CartStatus">
+            <EntityTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.Tbl_CartStatus">
+              <MappingFragment StoreEntitySet="Tbl_CartStatus">
+                <ScalarProperty Name="CartStatusId" ColumnName="CartStatusId" />
+                <ScalarProperty Name="CartStatus" ColumnName="CartStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Category">
+            <EntityTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.Tbl_Category">
+              <MappingFragment StoreEntitySet="Tbl_Category">
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Distribuidor">
+            <EntityTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.Tbl_Distribuidor">
+              <MappingFragment StoreEntitySet="Tbl_Distribuidor">
+                <ScalarProperty Name="Id_Distribuidor" ColumnName="Id_Distribuidor" />
+                <ScalarProperty Name="Fecha_Registro" ColumnName="Fecha_Registro" />
+                <ScalarProperty Name="Id_EstatusDist" ColumnName="Id_EstatusDist" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Ciudad_Municipio" ColumnName="Ciudad_Municipio" />
+                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+                <ScalarProperty Name="CalleNumero" ColumnName="CalleNumero" />
+                <ScalarProperty Name="Colonia" ColumnName="Colonia" />
+                <ScalarProperty Name="CP" ColumnName="CP" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="eMail" ColumnName="eMail" />
+                <ScalarProperty Name="EsProspecto" ColumnName="EsProspecto" />
+                <ScalarProperty Name="FolioSolicitud" ColumnName="FolioSolicitud" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_MemberRole">
+            <EntityTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.Tbl_MemberRole">
+              <MappingFragment StoreEntitySet="Tbl_MemberRole">
+                <ScalarProperty Name="MemberRoleId" ColumnName="MemberRoleId" />
+                <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Members">
+            <EntityTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.Tbl_Members">
+              <MappingFragment StoreEntitySet="Tbl_Members">
+                <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Order">
+            <EntityTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.Tbl_Order">
+              <MappingFragment StoreEntitySet="Tbl_Order">
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+                <ScalarProperty Name="NumberOfPieces" ColumnName="NumberOfPieces" />
+                <ScalarProperty Name="Folio" ColumnName="Folio" />
+                <ScalarProperty Name="OrderPlacedDate" ColumnName="OrderPlacedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Product">
+            <EntityTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.Tbl_Product">
+              <MappingFragment StoreEntitySet="Tbl_Product">
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+                <ScalarProperty Name="ProdDetailImage" ColumnName="ProdDetailImage" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="IsFeatured" ColumnName="IsFeatured" />
+                <ScalarProperty Name="ActualStock" ColumnName="ActualStock" />
+                <ScalarProperty Name="MinStock" ColumnName="MinStock" />
+                <ScalarProperty Name="MaxStock" ColumnName="MaxStock" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Roles">
+            <EntityTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.Tbl_Roles">
+              <MappingFragment StoreEntitySet="Tbl_Roles">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_ShippingDetails">
+            <EntityTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.Tbl_ShippingDetails">
+              <MappingFragment StoreEntitySet="Tbl_ShippingDetails">
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="Municipio" ColumnName="Municipio" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="AddressLine" ColumnName="AddressLine" />
+                <ScalarProperty Name="ShippingDetailId" ColumnName="ShippingDetailId" />
+                <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+                <ScalarProperty Name="OrderPlacedDate" ColumnName="OrderPlacedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_ShoppingCart">
+            <EntityTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.Tbl_ShoppingCart">
+              <MappingFragment StoreEntitySet="Tbl_ShoppingCart">
+                <ScalarProperty Name="Id_ShoppingCart" ColumnName="Id_ShoppingCart" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="CartStatusId" ColumnName="CartStatusId" />
+                <ScalarProperty Name="ShippingDetailId" ColumnName="ShippingDetailId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Status_Distribuidor">
+            <EntityTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.Tbl_Status_Distribuidor">
+              <MappingFragment StoreEntitySet="Tbl_Status_Distribuidor">
+                <ScalarProperty Name="Id_EstatusDist" ColumnName="Id_EstatusDist" />
+                <ScalarProperty Name="EstatusDistribuidor" ColumnName="EstatusDistribuidor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="USP_Get_Elements_From_ShoppingCart_By_ID" FunctionName="FrutasyVegetalesDeshidratadosModel.Store.USP_Get_Elements_From_ShoppingCart_By_ID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.USP_Get_Elements_From_ShoppingCart_By_ID_Result">
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_Get_Elements_To_ShoppingCart" FunctionName="FrutasyVegetalesDeshidratadosModel.Store.USP_Get_Elements_To_ShoppingCart">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.USP_Get_Elements_To_ShoppingCart_Result">
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="ClaveProducto" ColumnName="ClaveProducto" />
+                <ScalarProperty Name="ProdDetailImage" ColumnName="ProdDetailImage" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_Get_Order_Details" FunctionName="FrutasyVegetalesDeshidratadosModel.Store.USP_Get_Order_Details" />
+          <FunctionImportMapping FunctionImportName="USP_Get_Products" FunctionName="FrutasyVegetalesDeshidratadosModel.Store.USP_Get_Products">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.USP_Get_Products_Result">
+                <ScalarProperty Name="Clave" ColumnName="Clave" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Categoría" ColumnName="Categoría" />
+                <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+                <ScalarProperty Name="Eliminado" ColumnName="Eliminado" />
+                <ScalarProperty Name="Descripción" ColumnName="Descripción" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="En_Stock" ColumnName="En_Stock" />
+                <ScalarProperty Name="Stock_Mínimo" ColumnName="Stock_Mínimo" />
+                <ScalarProperty Name="Stock_Tope" ColumnName="Stock_Tope" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_Proceed_To_Pay" FunctionName="FrutasyVegetalesDeshidratadosModel.Store.USP_Proceed_To_Pay">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.USP_Proceed_To_Pay_Result">
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="ClaveProducto" ColumnName="ClaveProducto" />
+                <ScalarProperty Name="NomProducto" ColumnName="NomProducto" />
+                <ScalarProperty Name="PrecioUnitario" ColumnName="PrecioUnitario" />
+                <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_Search" FunctionName="FrutasyVegetalesDeshidratadosModel.Store.USP_Search">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.USP_Search_Result">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_ShowOrderCompleted" FunctionName="FrutasyVegetalesDeshidratadosModel.Store.USP_ShowOrderCompleted">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.USP_ShowOrderCompleted_Result">
+                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+                <ScalarProperty Name="eMail" ColumnName="eMail" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Municipio" ColumnName="Municipio" />
+                <ScalarProperty Name="CP" ColumnName="CP" />
+                <ScalarProperty Name="Folio" ColumnName="Folio" />
+                <ScalarProperty Name="Importe" ColumnName="Importe" />
+                <ScalarProperty Name="Transaccion" ColumnName="Transaccion" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Tbl_Contacto">
+            <EntityTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.Tbl_Contacto">
+              <MappingFragment StoreEntitySet="Tbl_Contacto">
+                <ScalarProperty Name="FechaContacto" ColumnName="FechaContacto" />
+                <ScalarProperty Name="TextoMensaje" ColumnName="TextoMensaje" />
+                <ScalarProperty Name="eMail" ColumnName="eMail" />
+                <ScalarProperty Name="Id_Contacto" ColumnName="Id_Contacto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Partners">
+            <EntityTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.Tbl_Partners">
+              <MappingFragment StoreEntitySet="Tbl_Partners">
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Estate" ColumnName="Estate" />
+                <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+                <ScalarProperty Name="eMail" ColumnName="eMail" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Id_Parner" ColumnName="Id_Parner" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_PayPal_Config">
+            <EntityTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.Tbl_PayPal_Config">
+              <MappingFragment StoreEntitySet="Tbl_PayPal_Config">
+                <ScalarProperty Name="clientSecret" ColumnName="clientSecret" />
+                <ScalarProperty Name="clientId" ColumnName="clientId" />
+                <ScalarProperty Name="divisa" ColumnName="divisa" />
+                <ScalarProperty Name="requestRetries" ColumnName="requestRetries" />
+                <ScalarProperty Name="connectionTimeout" ColumnName="connectionTimeout" />
+                <ScalarProperty Name="mode" ColumnName="mode" />
+                <ScalarProperty Name="Id_Parner" ColumnName="Id_Parner" />
+                <ScalarProperty Name="Id_Paypal_Config" ColumnName="Id_Paypal_Config" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_System_Config">
+            <EntityTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.Tbl_System_Config">
+              <MappingFragment StoreEntitySet="Tbl_System_Config">
+                <ScalarProperty Name="SOReceiver" ColumnName="SOReceiver" />
+                <ScalarProperty Name="PswSender" ColumnName="PswSender" />
+                <ScalarProperty Name="Sender" ColumnName="Sender" />
+                <ScalarProperty Name="PORT" ColumnName="PORT" />
+                <ScalarProperty Name="SMTP" ColumnName="SMTP" />
+                <ScalarProperty Name="Id_Parner" ColumnName="Id_Parner" />
+                <ScalarProperty Name="Id_SystemConfig" ColumnName="Id_SystemConfig" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
