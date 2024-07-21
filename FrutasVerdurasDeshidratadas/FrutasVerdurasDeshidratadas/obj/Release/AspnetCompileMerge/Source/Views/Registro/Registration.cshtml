@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Registration";
+    Layout = "~/Views/Shared/_master.cshtml";
+}
+
+<h2>Registration</h2>
+
+<div class="alert-success">
+    <strong>Message: </strong> @ViewBag.Message
+</div> 
+
+<div>
+    @*@Html.ActionLink("Salir", "Index", "Home")*@
+    <a class="btn btn-primary" href="@Url.Action("Index", "Home")">Salir</a>
+</div>

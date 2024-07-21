@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_master.cshtml";
+}
+
+<!-- Start Categories  -->
+<div class="categories-shop">
+    <div class="container">
+        <div class="title-all text-center">
+            <h1>Nuestra Línea de Productos </h1>
+            <h3>Ya tenemos WhatsApp para que realices tus pedídos de forma rápida y fácil. ¡Escribenos al 443 118 7727! 🛒📲</h3>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="shop-cat-box">
+                    <img class="img-fluid" src="~/images/Fondo_Salsas_2.jpg" alt="" />
+                    <a class="btn hvr-hover" href="@Url.Action("Salsas", "Store", new { _idCategory = 1 }, null)">Salsas</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="shop-cat-box">
+                    <img class="img-fluid" src="~/images/Fondo_Frutas_2.jpg" alt="" />
+                    <a class="btn hvr-hover" href="@Url.Action("Frutas", "Store", new { _idCategory = 2 }, null)">Frutas</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="shop-cat-box">
+                    <img class="img-fluid" src="~/images/Fondo_Tisanas_2.jpg" alt="" />
+                    <a class="btn hvr-hover" href="@Url.Action("Tisanas", "Store", new { _idCategory = 3 }, null)">Ponches y Tisanas</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    @Html.Raw(TempData["msg"])
+</div>
+<!-- End Categories -->

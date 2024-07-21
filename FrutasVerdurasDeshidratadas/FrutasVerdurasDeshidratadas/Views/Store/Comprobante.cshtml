@@ -1,0 +1,123 @@
+﻿@model IEnumerable<FrutasVerdurasDeshidratadas.DAL.USP_ShowOrderCompleted_Result>
+
+@{
+    ViewBag.Title = "Comprobante";
+    Layout = "~/Views/Shared/_master.cshtml";
+}
+
+<div class="title-all text-center">
+    <hr />
+    <h3>Ya tenemos WhatsApp para que realices tus pedídos de forma rápida y fácil. ¡Escribenos al 443 118 7727! 🛒📲</h3>
+    <h1 class="mb-3">Detalles de su compra</h1>
+    <h4 class="heading">Datos de la transacción</h4>
+</div>
+
+<section class="ftco-section ftco-degree-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 ftco-animate">
+                @*<h2 class="mb-3">Detalles de su compra</h2>
+                <h3 class="heading">Datos de la transacción</h3>*@
+
+                <div class="sidebar-box ftco-animate">
+                    @foreach (var item in Model)
+                    {
+                        <table>
+                            <tr>
+                                <td><p class="categories">Folio:</p></td>
+                                <td>
+                                    <span>@Html.DisplayFor(modelItem => item.Folio)</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><p class="categories">Importe:</p></td>
+                                <td>
+                                    <span>@Html.DisplayFor(modelItem => item.Importe)</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><p class="categories">Transacción del Pago:</p></td>
+                                <td>
+                                    <span>@Html.DisplayFor(modelItem => item.Transaccion)</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><p class="categories">Fecha de la Transacción:</p></td>
+                                <td>
+                                    <span>@Html.DisplayFor(modelItem => item.Fecha)</span>
+                                </td>
+                            </tr>
+                        </table>
+                    }
+                </div>
+
+            </div>
+            <div class="sidebar-box ftco-animate">
+                <h3 class="heading">Datos de entrega</h3>
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Nombres)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Apellidos)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.eMail)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Direccion)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Ciudad)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Estado)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Municipio)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CP)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Nombres)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Apellidos)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.eMail)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Direccion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Ciudad)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Estado)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Municipio)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CP)
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+            @*<a href="@Url.Action("Index", "Home")" class="btn btn-primary py-3 px-4">Seguir Comprando</a>*@
+            <a href="@Url.Action("FinCompra", "Store", new { _idMember = ViewBag.MiembroId, _transaccion = @ViewBag.TransaccionNumber }, null)" class="btn btn-primary py-3 px-4">Generar Comprobante y Salir </a>
+        </div>
+        <hr />
+    </div>
+</section>
+

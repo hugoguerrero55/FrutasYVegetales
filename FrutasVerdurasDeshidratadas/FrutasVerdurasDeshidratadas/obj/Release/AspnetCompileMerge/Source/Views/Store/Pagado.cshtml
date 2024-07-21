@@ -1,0 +1,70 @@
+﻿@model IEnumerable<FrutasVerdurasDeshidratadas.Models.Envios>
+
+@{
+    ViewBag.Title = "Pagado";
+    Layout = "~/Views/Shared/free_images.cshtml";
+}
+
+<div class="title-all text-center">
+    <h3>Ya tenemos WhatsApp para que realices tus pedídos de forma rápida y fácil. ¡Escribenos al 443 118 7727! 🛒📲</h3>
+    <h1 style="color: blue;font-size: 30px;">¡Cobro realizado con éxito!</h1>
+    <h4>Presione "Continuar con la Entrega" para capturar los datos del envío y se genere la Orden de Entrega</h4>
+</div>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Orden Entrega</title>
+</head>
+<body>
+    @*<div>
+        <h2 style="color: blue;font-size: 30px;">¡Cobro realizado con éxito!</h2>
+        <h4>Presione "Continuar con la Entrega" para capturar los datos del envío y se genere la Orden de Entrega</h4>
+    </div>*@
+    <div>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderId)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.AmountPaid)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TransactionID)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AmountPaid)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TransactionID)
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    <hr />
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <a href="@Url.Action("Envio", "Store", new { _idTrans = @ViewBag.TransID, _orderID = @ViewBag.OrderID, _amountPaid = @ViewBag.AmountPaid }, null)" class="btn btn-primary py-3 px-4">Continuar con la Entrega </a>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+

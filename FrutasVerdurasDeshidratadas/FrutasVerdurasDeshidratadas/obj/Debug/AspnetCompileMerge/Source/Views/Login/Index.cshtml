@@ -1,0 +1,60 @@
+﻿@model FrutasVerdurasDeshidratadas.Models.Login
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_master.cshtml";
+}
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <div class="card-header-title">Formulario de acceso</div>
+                    </div>
+                    <div class="card-body collapse show" id="card1">
+                        <h4 class="card-title">! Sea Usted Bienvenido a Frutas y Vegetales Deshidratados Shop ¡</h4>
+                        <p class="card-text">Capture correo y contraseña y haga click en el boton INGRESAR para entrar a la lista de títulos.</p>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.LabelFor(model => model._emailId, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model._emailId, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model._emailId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model._password, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model._password, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model._password, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model._rememberme, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                <div class="checkbox">
+                                    @Html.EditorFor(model => model._rememberme)
+                                    @Html.ValidationMessageFor(model => model._rememberme, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <input type="submit" value="Ingresar" class="btn btn-primary" />
+                        <hr />
+                        <div>
+                            <a class="btn btn-primary" href="@Url.Action("Index", "Home")">Salir</a>
+                            <a class="btn btn-primary" href="@Url.Action("Index", "Registro")">Registro</a>
+                        </div>
+                    </div>
+                    @Html.Raw(TempData["msg"])
+                </div>
+            </div>
+        </div>
+    </div>
+}

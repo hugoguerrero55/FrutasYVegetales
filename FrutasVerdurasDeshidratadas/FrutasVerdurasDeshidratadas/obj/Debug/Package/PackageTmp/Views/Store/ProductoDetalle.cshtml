@@ -1,0 +1,128 @@
+﻿@model IEnumerable<FrutasVerdurasDeshidratadas.DAL.Tbl_Product>
+
+@{
+    ViewBag.Title = "ProductoDetalle";
+    Layout = "~/Views/Shared/_master.cshtml";
+}
+
+<div class="bottom-area d-flex px-3">
+    <div class="m-auto d-flex">
+        @if (Model[_element - 1].ActualStock > 0)
+        {
+            <a href="@Url.Action("AgregaAlCarrito", "Tienda", new { _productId =  @Html.DisplayFor(modelItem => Model[_element - 1].ProductId), _posicion = "salsas" }, null)" class="buy-now d-flex justify-content-center align-items-center mx-1">
+                <span><i class="ion-ios-cart"></i></span>
+            </a>
+        }
+        else
+        {
+            <p style="color:#FF0000" ;>No hay por el momento.</p>
+        }
+    </div>
+</div>
+
+
+@*<h2>ProductoDetalle</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsDelete)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModifiedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProdDetailImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsFeatured)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ActualStock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MinStock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaxStock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tbl_Category.CategoryName)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsDelete)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifiedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductImage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProdDetailImage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsFeatured)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActualStock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MinStock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaxStock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tbl_Category.CategoryName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.ProductId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.ProductId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.ProductId })
+            </td>
+        </tr>
+    }
+
+    </table>*@

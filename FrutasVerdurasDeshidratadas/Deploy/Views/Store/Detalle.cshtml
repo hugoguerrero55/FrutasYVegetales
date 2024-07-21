@@ -1,0 +1,105 @@
+﻿@model IEnumerable<FrutasVerdurasDeshidratadas.DAL.Tbl_Product>
+
+@{
+    ViewBag.Title = "Detalle de Producto";
+    Layout = "~/Views/Shared/free_images.cshtml";
+
+    //creamos el objeto random y asignamos a una variable string
+    Random r = new Random();
+    string a = r.Next().ToString();
+    string _detalle = string.Empty;
+}
+
+<div class="shop-detail-box-main">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-xl-5 col-lg-5 col-md-6">
+                    <div id="carousel-example-1" class="single-product-slider carousel slide" data-ride="carousel">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                @switch (item.CategoryId)
+                                {
+                                    case 1: //salsas
+                                        <img class="d-block w-100" src="~/images/salsas/@Html.DisplayFor(modelItem => item.ProdDetailImage)?a=@a" alt="First slide" />
+                                        break;
+                                    case 2: //frutas
+                                        <img class="d-block w-100" src="~/images/fruta/@Html.DisplayFor(modelItem => item.ProdDetailImage)?a=@a" alt="First slide" />
+                                        break;
+                                    case 3://tisanas
+                                        <img class="d-block w-100" src="~/images/tisanas/@Html.DisplayFor(modelItem => item.ProdDetailImage)?a=@a" alt="First slide" />
+                                        break;
+                                }
+
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carousel-example-1" role="button" data-slide="prev">
+                            <i class="fa fa-angle-left" aria-hidden="true"></i>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carousel-example-1" role="button" data-slide="next">
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            <span class="sr-only">Next</span>
+                        </a>
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-1" data-slide-to="0" class="active">
+                                @switch (item.CategoryId)
+                                {
+                                    case 1: //salsas
+                                        <img class="d-block w-100 img-fluid" src="~/images/salsas/@Html.DisplayFor(modelItem => item.ProdDetailImage)?a=@a" alt="" />
+                                        break;
+                                    case 2: //frutas
+                                        <img class="d-block w-100 img-fluid" src="~/images/fruta/@Html.DisplayFor(modelItem => item.ProdDetailImage)?a=@a" alt="" />
+                                        break;
+                                    case 3://tisanas
+                                        <img class="d-block w-100 img-fluid" src="~/images/tisanas/@Html.DisplayFor(modelItem => item.ProdDetailImage)?a=@a" alt="" />
+                                        break;
+                                }
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-7 col-md-6">
+                    <div class="single-product-details">
+                        <h2>@Html.DisplayFor(modelItem => item.ProductName)</h2> <!--Nombre del producto-->
+                        <h5> <!--<del>$ 27.50</del>--> $ @Html.DisplayFor(modelItem => item.Price)</h5> <!--Precio Unitario-->
+                        <p class="available-stock"><span> En stock hay <a href="#">@Html.DisplayFor(modelItem => item.ActualStock)  Disponibles</a></span><p>
+                            <h4>Descripción:</h4>
+                        <p>@Html.DisplayFor(modelItem => item.Description)</p> <!--Descripción del Producto-->
+                        <ul>
+                            <li>
+                                <div class="form-group quantity-box">
+                                    <label class="control-label">Cantidad</label>
+                                    @*<input class="form-control" value="0" min="0" max="20" type="number">*@
+                                    <p>1 Pza.</p>
+                                </div>
+                            </li>
+                        </ul>
+
+                        @*OJO ESTO ESTA COMENTADO MOMENTANEAMENTE*@
+                        <div class="price-box-bar">
+                            <div class="cart-and-bay-btn">
+                                <a class="btn hvr-hover data-fancybox-close" href="@Url.Action("AgregaAlCarrito", "Store", new { _productId =  @Html.DisplayFor(modelItem => item.ProductId), _posicion = "salsas" }, null)">Agregar a mi Carrito de Compras</a>
+                            </div>
+                        </div>
+
+                        <div class="add-to-btn">
+                            <div class="add-comp">
+                                @*<a class="btn hvr-hover" href="#"><i class="fas fa-heart"></i> Add to wishlist</a>
+                                <a class="btn hvr-hover" href="#"><i class="fas fa-sync-alt"></i> Add to Compare</a>*@
+                            </div>
+                            <div class="share-bar">
+                                <a class="btn hvr-hover" href="https://www.facebook.com/FVdeshidratadosmx"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                                <a class="btn hvr-hover" href="https://twitter.com/VegetalesDe"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                                <a class="btn hvr-hover" href="https://www.instagram.com/fyvddm/"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                                <a class="btn hvr-hover" href="https://api.whatsapp.com/send?phone=524432527243&fbclid=IwAR28y65TFrUv08QeLUrhmAau_46BworElyE02iPvRP846hkFUV4AKtq6N08"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>              
+    </div>
+</div>
+<!-- End Cart -->

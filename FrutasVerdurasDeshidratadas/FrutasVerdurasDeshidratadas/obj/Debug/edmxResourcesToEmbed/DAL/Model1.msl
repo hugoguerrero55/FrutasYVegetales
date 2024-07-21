@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FrutasyVegetalesDeshidratadosModelStoreContainer" CdmEntityContainer="FrutasyVegetalesDeshidratadosEntities">
+    <EntitySetMapping Name="Tbl_CartStatus">
+      <EntityTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.Tbl_CartStatus">
+        <MappingFragment StoreEntitySet="Tbl_CartStatus">
+          <ScalarProperty Name="CartStatusId" ColumnName="CartStatusId" />
+          <ScalarProperty Name="CartStatus" ColumnName="CartStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Category">
+      <EntityTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.Tbl_Category">
+        <MappingFragment StoreEntitySet="Tbl_Category">
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Distribuidor">
+      <EntityTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.Tbl_Distribuidor">
+        <MappingFragment StoreEntitySet="Tbl_Distribuidor">
+          <ScalarProperty Name="Id_Distribuidor" ColumnName="Id_Distribuidor" />
+          <ScalarProperty Name="Fecha_Registro" ColumnName="Fecha_Registro" />
+          <ScalarProperty Name="Id_EstatusDist" ColumnName="Id_EstatusDist" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Ciudad_Municipio" ColumnName="Ciudad_Municipio" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="CalleNumero" ColumnName="CalleNumero" />
+          <ScalarProperty Name="Colonia" ColumnName="Colonia" />
+          <ScalarProperty Name="CP" ColumnName="CP" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="eMail" ColumnName="eMail" />
+          <ScalarProperty Name="EsProspecto" ColumnName="EsProspecto" />
+          <ScalarProperty Name="FolioSolicitud" ColumnName="FolioSolicitud" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_MemberRole">
+      <EntityTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.Tbl_MemberRole">
+        <MappingFragment StoreEntitySet="Tbl_MemberRole">
+          <ScalarProperty Name="MemberRoleId" ColumnName="MemberRoleId" />
+          <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Members">
+      <EntityTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.Tbl_Members">
+        <MappingFragment StoreEntitySet="Tbl_Members">
+          <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Order">
+      <EntityTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.Tbl_Order">
+        <MappingFragment StoreEntitySet="Tbl_Order">
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="NumberOfPieces" ColumnName="NumberOfPieces" />
+          <ScalarProperty Name="Folio" ColumnName="Folio" />
+          <ScalarProperty Name="OrderPlacedDate" ColumnName="OrderPlacedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Product">
+      <EntityTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.Tbl_Product">
+        <MappingFragment StoreEntitySet="Tbl_Product">
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+          <ScalarProperty Name="ProdDetailImage" ColumnName="ProdDetailImage" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="IsFeatured" ColumnName="IsFeatured" />
+          <ScalarProperty Name="ActualStock" ColumnName="ActualStock" />
+          <ScalarProperty Name="MinStock" ColumnName="MinStock" />
+          <ScalarProperty Name="MaxStock" ColumnName="MaxStock" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Roles">
+      <EntityTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.Tbl_Roles">
+        <MappingFragment StoreEntitySet="Tbl_Roles">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_ShippingDetails">
+      <EntityTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.Tbl_ShippingDetails">
+        <MappingFragment StoreEntitySet="Tbl_ShippingDetails">
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="Municipio" ColumnName="Municipio" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="AddressLine" ColumnName="AddressLine" />
+          <ScalarProperty Name="ShippingDetailId" ColumnName="ShippingDetailId" />
+          <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="OrderPlacedDate" ColumnName="OrderPlacedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_ShoppingCart">
+      <EntityTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.Tbl_ShoppingCart">
+        <MappingFragment StoreEntitySet="Tbl_ShoppingCart">
+          <ScalarProperty Name="Id_ShoppingCart" ColumnName="Id_ShoppingCart" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="CartStatusId" ColumnName="CartStatusId" />
+          <ScalarProperty Name="ShippingDetailId" ColumnName="ShippingDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Status_Distribuidor">
+      <EntityTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.Tbl_Status_Distribuidor">
+        <MappingFragment StoreEntitySet="Tbl_Status_Distribuidor">
+          <ScalarProperty Name="Id_EstatusDist" ColumnName="Id_EstatusDist" />
+          <ScalarProperty Name="EstatusDistribuidor" ColumnName="EstatusDistribuidor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="USP_Get_Elements_From_ShoppingCart_By_ID" FunctionName="FrutasyVegetalesDeshidratadosModel.Store.USP_Get_Elements_From_ShoppingCart_By_ID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.USP_Get_Elements_From_ShoppingCart_By_ID_Result">
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_Get_Elements_To_ShoppingCart" FunctionName="FrutasyVegetalesDeshidratadosModel.Store.USP_Get_Elements_To_ShoppingCart">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.USP_Get_Elements_To_ShoppingCart_Result">
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="ClaveProducto" ColumnName="ClaveProducto" />
+          <ScalarProperty Name="ProdDetailImage" ColumnName="ProdDetailImage" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_Get_Order_Details" FunctionName="FrutasyVegetalesDeshidratadosModel.Store.USP_Get_Order_Details" />
+    <FunctionImportMapping FunctionImportName="USP_Get_Products" FunctionName="FrutasyVegetalesDeshidratadosModel.Store.USP_Get_Products">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.USP_Get_Products_Result">
+          <ScalarProperty Name="Clave" ColumnName="Clave" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Categoría" ColumnName="Categoría" />
+          <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+          <ScalarProperty Name="Eliminado" ColumnName="Eliminado" />
+          <ScalarProperty Name="Descripción" ColumnName="Descripción" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="En_Stock" ColumnName="En_Stock" />
+          <ScalarProperty Name="Stock_Mínimo" ColumnName="Stock_Mínimo" />
+          <ScalarProperty Name="Stock_Tope" ColumnName="Stock_Tope" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_Proceed_To_Pay" FunctionName="FrutasyVegetalesDeshidratadosModel.Store.USP_Proceed_To_Pay">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.USP_Proceed_To_Pay_Result">
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="ClaveProducto" ColumnName="ClaveProducto" />
+          <ScalarProperty Name="NomProducto" ColumnName="NomProducto" />
+          <ScalarProperty Name="PrecioUnitario" ColumnName="PrecioUnitario" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_Search" FunctionName="FrutasyVegetalesDeshidratadosModel.Store.USP_Search">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.USP_Search_Result">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_ShowOrderCompleted" FunctionName="FrutasyVegetalesDeshidratadosModel.Store.USP_ShowOrderCompleted">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.USP_ShowOrderCompleted_Result">
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+          <ScalarProperty Name="eMail" ColumnName="eMail" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Municipio" ColumnName="Municipio" />
+          <ScalarProperty Name="CP" ColumnName="CP" />
+          <ScalarProperty Name="Folio" ColumnName="Folio" />
+          <ScalarProperty Name="Importe" ColumnName="Importe" />
+          <ScalarProperty Name="Transaccion" ColumnName="Transaccion" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Tbl_Contacto">
+      <EntityTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.Tbl_Contacto">
+        <MappingFragment StoreEntitySet="Tbl_Contacto">
+          <ScalarProperty Name="FechaContacto" ColumnName="FechaContacto" />
+          <ScalarProperty Name="TextoMensaje" ColumnName="TextoMensaje" />
+          <ScalarProperty Name="eMail" ColumnName="eMail" />
+          <ScalarProperty Name="Id_Contacto" ColumnName="Id_Contacto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Partners">
+      <EntityTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.Tbl_Partners">
+        <MappingFragment StoreEntitySet="Tbl_Partners">
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Estate" ColumnName="Estate" />
+          <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+          <ScalarProperty Name="eMail" ColumnName="eMail" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Id_Parner" ColumnName="Id_Parner" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_PayPal_Config">
+      <EntityTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.Tbl_PayPal_Config">
+        <MappingFragment StoreEntitySet="Tbl_PayPal_Config">
+          <ScalarProperty Name="clientSecret" ColumnName="clientSecret" />
+          <ScalarProperty Name="clientId" ColumnName="clientId" />
+          <ScalarProperty Name="divisa" ColumnName="divisa" />
+          <ScalarProperty Name="requestRetries" ColumnName="requestRetries" />
+          <ScalarProperty Name="connectionTimeout" ColumnName="connectionTimeout" />
+          <ScalarProperty Name="mode" ColumnName="mode" />
+          <ScalarProperty Name="Id_Parner" ColumnName="Id_Parner" />
+          <ScalarProperty Name="Id_Paypal_Config" ColumnName="Id_Paypal_Config" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_System_Config">
+      <EntityTypeMapping TypeName="FrutasyVegetalesDeshidratadosModel.Tbl_System_Config">
+        <MappingFragment StoreEntitySet="Tbl_System_Config">
+          <ScalarProperty Name="SOReceiver" ColumnName="SOReceiver" />
+          <ScalarProperty Name="PswSender" ColumnName="PswSender" />
+          <ScalarProperty Name="Sender" ColumnName="Sender" />
+          <ScalarProperty Name="PORT" ColumnName="PORT" />
+          <ScalarProperty Name="SMTP" ColumnName="SMTP" />
+          <ScalarProperty Name="Id_Parner" ColumnName="Id_Parner" />
+          <ScalarProperty Name="Id_SystemConfig" ColumnName="Id_SystemConfig" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
